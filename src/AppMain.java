@@ -5,6 +5,7 @@ import excepciones.InvalidLoginException;
 import excepciones.InvalidPasswordException;
 import general.Sistema;
 import java.util.Date;
+import javax.swing.UIManager;
 import modelo.Usuario;
 import vista.frmIniciar;
 
@@ -22,6 +23,7 @@ import vista.frmIniciar;
 public class AppMain {
 
     public static void main(String[] args) {
+        
         
         try{   
         Sistema.usuarios.add(new Usuario("Jimmy","Cjuro Apaza","JimmyCjuro", "secreta", "jimmy.cjuro@unmsm.edu.pe", "PERU", new Date(2000-1900, 0, 15), "hombre"));
