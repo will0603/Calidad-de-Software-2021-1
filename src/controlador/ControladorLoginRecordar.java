@@ -66,4 +66,13 @@ public class ControladorLoginRecordar {
         vista.setVisible(true);
     }
     
+    private boolean validar() {
+        boolean resultado = false;
+        if (this.vista.txtUsuarioEmail.getText().length()!= 0
+                ){
+            resultado = true;
+        }
+        return resultado;
+    }
+    
 }

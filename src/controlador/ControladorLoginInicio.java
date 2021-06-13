@@ -83,4 +83,14 @@ public class ControladorLoginInicio {
         vista.setVisible(true);
     }
     
+    private boolean validar() {
+        boolean resultado = false;
+        if (this.vista.txtUsuario.getText().length()!= 0 &&
+                this.vista.txtContraseña.getText().length()!= 0
+                ){
+            resultado = true;
+        }
+        return resultado;
+    }
+    
 }
