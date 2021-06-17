@@ -38,9 +38,9 @@ public class Conexion {
         this.connection = null;
         this.statement = null;
         this.jdbc = "com.mysql.jdbc.Driver";
-        this.ruta = "jdbc:mysql://localhost:3306/devcell";
+        this.ruta = "jdbc:mysql://35.226.79.115:3306/devcell";
         this.usuario ="root";
-        this.contra ="77710875";
+        this.contra ="unmsm20211";
     }
     
     /*El método abrirConexión permite que el atributo connection cree
