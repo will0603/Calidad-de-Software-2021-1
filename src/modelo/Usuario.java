@@ -237,12 +237,11 @@ public class Usuario {
         
         try{
             ResultSet resultado = conexion.consultar(SQL);
-            //(email.endsWith("@hotmail.com")||email.endsWith("@gmail.com")||email.endsWith("@unmsm.edu.pe")) &&
-            if(resultado.next()){
-                throw new InvalidEmailException(email); 
-            }else{
-                
+            
+            if((email.endsWith("@hotmail.com")||email.endsWith("@gmail.com")||email.endsWith("@unmsm.edu.pe")) && !resultado.next()){
                 this.email = email;
+            }else{
+                throw new InvalidEmailException(email); 
             }
         }catch(SQLException e){
             e.printStackTrace();
