@@ -11,5 +11,4 @@ public class InvalidEmailException extends Exception{
         super("Invalid email: " + email);
     }
     
-    
 }

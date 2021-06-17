@@ -53,23 +53,23 @@ public class frmIniciar extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Arial Black", 0, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 204, 204));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/lblLogoTaller.jpg"))); // NOI18N
-        jLabel1.setText("MovilTech");
+        jLabel1.setText("DevCell");
 
         javax.swing.GroupLayout panTituloLayout = new javax.swing.GroupLayout(panTitulo);
         panTitulo.setLayout(panTituloLayout);
         panTituloLayout.setHorizontalGroup(
             panTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panTituloLayout.createSequentialGroup()
-                .addContainerGap(46, Short.MAX_VALUE)
+                .addContainerGap(76, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(40, 40, 40))
+                .addGap(62, 62, 62))
         );
         panTituloLayout.setVerticalGroup(
             panTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panTituloLayout.createSequentialGroup()
-                .addContainerGap(33, Short.MAX_VALUE)
+                .addContainerGap(43, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(23, 23, 23))
+                .addContainerGap())
         );
 
         getContentPane().add(panTitulo, java.awt.BorderLayout.NORTH);
@@ -151,7 +151,7 @@ public class frmIniciar extends javax.swing.JFrame {
 
         btnAbrirRecordarContraseña.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         btnAbrirRecordarContraseña.setForeground(new java.awt.Color(204, 204, 204));
-        btnAbrirRecordarContraseña.setText("REESTABLECER CONTRASEÑA");
+        btnAbrirRecordarContraseña.setText("¿Olvidaste tu contraseña?");
         btnAbrirRecordarContraseña.setContentAreaFilled(false);
 
         javax.swing.GroupLayout panBotonesLayout = new javax.swing.GroupLayout(panBotones);
@@ -170,14 +170,14 @@ public class frmIniciar extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(panBotonesLayout.createSequentialGroup()
                         .addComponent(btnAbrirRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 422, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap(18, Short.MAX_VALUE))))
             .addGroup(panBotonesLayout.createSequentialGroup()
                 .addGroup(panBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panBotonesLayout.createSequentialGroup()
                         .addGap(180, 180, 180)
                         .addComponent(btnSalir))
                     .addGroup(panBotonesLayout.createSequentialGroup()
-                        .addGap(67, 67, 67)
+                        .addGap(92, 92, 92)
                         .addComponent(btnAbrirRecordarContraseña)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );

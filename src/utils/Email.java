@@ -43,7 +43,6 @@ public class Email implements Runnable{
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(props.getProperty("to")));
             message.setSubject(props.getProperty("subject"));
             message.setContent(props.getProperty("content"), "text/html; charset=utf-8");
-            //message.setText(" Mensaje de ejemplo");
             Transport.send(message);
 
             System.out.println("¡Mensaje enviado!");
