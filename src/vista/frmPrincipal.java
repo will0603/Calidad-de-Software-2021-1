@@ -27,37 +27,900 @@ public class frmPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        PanTitulo = new javax.swing.JPanel();
+        txtBuscar = new javax.swing.JTextField();
+        btnRetroceder = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        btnAvanzar = new javax.swing.JButton();
+        btnBuscar = new javax.swing.JButton();
+        PanBotones = new javax.swing.JPanel();
+        btnRecomendaciones = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        btnHistorial = new javax.swing.JButton();
+        btnCancionesFavoritas = new javax.swing.JButton();
+        btnArtistas = new javax.swing.JButton();
+        btnPodcasts = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        btnPlayList = new javax.swing.JButton();
+        btnMantenimiento = new javax.swing.JButton();
+        btnPlayList1 = new javax.swing.JButton();
+        PanReproductor = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        btnMeGusta = new javax.swing.JButton();
+        lblNombreAudio = new javax.swing.JLabel();
+        lblTipoAudio = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
         btnSalir = new javax.swing.JButton();
+        panCentro = new javax.swing.JPanel();
+        panTitulo = new javax.swing.JPanel();
+        lblTituloPestaña = new javax.swing.JLabel();
+        panPrincipal = new javax.swing.JPanel();
+        panTabla = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tblCanciones = new javax.swing.JTable();
+        panImagenes = new javax.swing.JPanel();
+        panControles1 = new javax.swing.JPanel();
+        cboTipoUsuario = new javax.swing.JComboBox<>();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        txtNombres = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        txtPaterno = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        txtCodigo = new javax.swing.JTextField();
+        panTablaMantenimiento1 = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tblMantenimiento1 = new javax.swing.JTable();
+        PanAmigos1 = new javax.swing.JPanel();
+        btnAgregar2 = new javax.swing.JButton();
+        btnEliminar2 = new javax.swing.JButton();
+        btnEditar1 = new javax.swing.JButton();
+        btnCancelar1 = new javax.swing.JButton();
+        btnEditarNuevaVentana1 = new javax.swing.JButton();
+        panMantenimiento = new javax.swing.JPanel();
+        panControles = new javax.swing.JPanel();
+        panControlesNorte = new javax.swing.JPanel();
+        rbtnAudioCancion = new javax.swing.JRadioButton();
+        rbtnAudioEpisodio = new javax.swing.JRadioButton();
+        Nombre = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        txtNombre = new javax.swing.JTextField();
+        panMantenimientoCard = new javax.swing.JPanel();
+        panEpisodio = new javax.swing.JPanel();
+        txtNombreAutor = new javax.swing.JTextField();
+        Nombre2 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        txtPodcasts = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        txtDescripcionPodcasts = new javax.swing.JTextField();
+        panCancion = new javax.swing.JPanel();
+        cboGenero = new javax.swing.JComboBox<>();
+        jLabel13 = new javax.swing.JLabel();
+        Nombre1 = new javax.swing.JLabel();
+        txtNombreArtista = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        txtNombreAlbum = new javax.swing.JTextField();
+        panControlesSur = new javax.swing.JPanel();
+        btnMostrar = new javax.swing.JButton();
+        panTablaMantenimiento = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblMantenimiento = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(0, 0, 0));
         setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(1370, 1004));
 
-        btnSalir.setBackground(new java.awt.Color(0, 0, 0));
-        btnSalir.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
-        btnSalir.setForeground(new java.awt.Color(204, 204, 204));
-        btnSalir.setText("SALIR");
+        PanTitulo.setBackground(new java.awt.Color(0, 0, 0));
+        PanTitulo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51), 2));
+
+        txtBuscar.setBackground(new java.awt.Color(204, 204, 204));
+        txtBuscar.setFont(new java.awt.Font("Arial Black", 0, 22)); // NOI18N
+
+        btnRetroceder.setFont(new java.awt.Font("Arial Black", 0, 13)); // NOI18N
+        btnRetroceder.setForeground(new java.awt.Color(204, 204, 204));
+        btnRetroceder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnRetroceder.png"))); // NOI18N
+        btnRetroceder.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnRetroceder.setContentAreaFilled(false);
+
+        jComboBox1.setBackground(new java.awt.Color(204, 204, 204));
+        jComboBox1.setFont(new java.awt.Font("Arial Black", 0, 13)); // NOI18N
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Jimmy Cjuro Apaza", "Sesion Privada", "Cuenta", "Configuracion", "Cerrar Sesión" }));
+
+        jComboBox2.setFont(new java.awt.Font("Arial Black", 0, 13)); // NOI18N
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "...", "Archivo", "Editar", "Ver", "Reproduccion", "Ayuda" }));
+
+        btnAvanzar.setFont(new java.awt.Font("Arial Black", 0, 13)); // NOI18N
+        btnAvanzar.setForeground(new java.awt.Color(204, 204, 204));
+        btnAvanzar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnAvanzar.png"))); // NOI18N
+        btnAvanzar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnAvanzar.setContentAreaFilled(false);
+
+        btnBuscar.setText("Buscar");
+
+        javax.swing.GroupLayout PanTituloLayout = new javax.swing.GroupLayout(PanTitulo);
+        PanTitulo.setLayout(PanTituloLayout);
+        PanTituloLayout.setHorizontalGroup(
+            PanTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanTituloLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(147, 147, 147)
+                .addComponent(btnRetroceder, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnAvanzar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(231, 231, 231)
+                .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(198, 198, 198)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(404, Short.MAX_VALUE))
+        );
+        PanTituloLayout.setVerticalGroup(
+            PanTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanTituloLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(PanTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnRetroceder, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAvanzar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(5, 5, 5))
+        );
+
+        getContentPane().add(PanTitulo, java.awt.BorderLayout.PAGE_START);
+
+        PanBotones.setBackground(new java.awt.Color(0, 0, 0));
+        PanBotones.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51), 2));
+
+        btnRecomendaciones.setBackground(new java.awt.Color(0, 0, 0));
+        btnRecomendaciones.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        btnRecomendaciones.setForeground(new java.awt.Color(204, 204, 204));
+        btnRecomendaciones.setText("Inventario");
+        btnRecomendaciones.setBorder(null);
+        btnRecomendaciones.setContentAreaFilled(false);
+
+        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel1.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel1.setText("TU BIBLIOTECA");
+
+        btnHistorial.setBackground(new java.awt.Color(0, 0, 0));
+        btnHistorial.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        btnHistorial.setForeground(new java.awt.Color(204, 204, 204));
+        btnHistorial.setText("Facturacion");
+        btnHistorial.setBorder(null);
+        btnHistorial.setContentAreaFilled(false);
+
+        btnCancionesFavoritas.setBackground(new java.awt.Color(0, 0, 0));
+        btnCancionesFavoritas.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        btnCancionesFavoritas.setForeground(new java.awt.Color(204, 204, 204));
+        btnCancionesFavoritas.setText("Taller");
+        btnCancionesFavoritas.setBorder(null);
+        btnCancionesFavoritas.setContentAreaFilled(false);
+
+        btnArtistas.setBackground(new java.awt.Color(0, 0, 0));
+        btnArtistas.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        btnArtistas.setForeground(new java.awt.Color(204, 204, 204));
+        btnArtistas.setText("<Nombre>");
+        btnArtistas.setBorder(null);
+        btnArtistas.setContentAreaFilled(false);
+
+        btnPodcasts.setBackground(new java.awt.Color(0, 0, 0));
+        btnPodcasts.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        btnPodcasts.setForeground(new java.awt.Color(204, 204, 204));
+        btnPodcasts.setText("<Nombre>");
+        btnPodcasts.setBorder(null);
+        btnPodcasts.setContentAreaFilled(false);
+
+        jLabel3.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel3.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel3.setText("COLECCIONES");
+
+        btnPlayList.setBackground(new java.awt.Color(0, 0, 0));
+        btnPlayList.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        btnPlayList.setForeground(new java.awt.Color(204, 204, 204));
+        btnPlayList.setText("<Nombre>");
+        btnPlayList.setBorder(null);
+        btnPlayList.setContentAreaFilled(false);
+
+        btnMantenimiento.setBackground(new java.awt.Color(0, 0, 0));
+        btnMantenimiento.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        btnMantenimiento.setForeground(new java.awt.Color(204, 204, 204));
+        btnMantenimiento.setText("Mantenimiento");
+        btnMantenimiento.setBorder(null);
+        btnMantenimiento.setContentAreaFilled(false);
+
+        btnPlayList1.setBackground(new java.awt.Color(0, 0, 0));
+        btnPlayList1.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        btnPlayList1.setForeground(new java.awt.Color(204, 204, 204));
+        btnPlayList1.setText("<Nombre>");
+        btnPlayList1.setBorder(null);
+        btnPlayList1.setContentAreaFilled(false);
+
+        javax.swing.GroupLayout PanBotonesLayout = new javax.swing.GroupLayout(PanBotones);
+        PanBotones.setLayout(PanBotonesLayout);
+        PanBotonesLayout.setHorizontalGroup(
+            PanBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanBotonesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(PanBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel1)
+                    .addComponent(btnRecomendaciones)
+                    .addComponent(btnHistorial)
+                    .addComponent(btnCancionesFavoritas)
+                    .addComponent(btnArtistas)
+                    .addComponent(btnPodcasts)
+                    .addComponent(btnMantenimiento)
+                    .addComponent(btnPlayList1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnPlayList, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        PanBotonesLayout.setVerticalGroup(
+            PanBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanBotonesLayout.createSequentialGroup()
+                .addGap(67, 67, 67)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(btnRecomendaciones)
+                .addGap(18, 18, 18)
+                .addComponent(btnHistorial)
+                .addGap(18, 18, 18)
+                .addComponent(btnCancionesFavoritas)
+                .addGap(18, 18, 18)
+                .addComponent(btnMantenimiento)
+                .addGap(18, 18, 18)
+                .addComponent(btnArtistas)
+                .addGap(18, 18, 18)
+                .addComponent(btnPodcasts)
+                .addGap(29, 29, 29)
+                .addComponent(jLabel3)
+                .addGap(18, 18, 18)
+                .addComponent(btnPlayList)
+                .addGap(18, 18, 18)
+                .addComponent(btnPlayList1)
+                .addContainerGap(317, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(PanBotones, java.awt.BorderLayout.LINE_START);
+
+        PanReproductor.setBackground(new java.awt.Color(8, 8, 8));
+        PanReproductor.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51), 2));
+        PanReproductor.setForeground(new java.awt.Color(51, 51, 51));
+        PanReproductor.setLayout(new java.awt.BorderLayout());
+
+        jPanel2.setBackground(new java.awt.Color(0, 0, 0));
+
+        btnMeGusta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnNogusta.png"))); // NOI18N
+        btnMeGusta.setBorder(null);
+        btnMeGusta.setContentAreaFilled(false);
+
+        lblNombreAudio.setBackground(new java.awt.Color(255, 255, 255));
+        lblNombreAudio.setFont(new java.awt.Font("Arial Black", 0, 16)); // NOI18N
+        lblNombreAudio.setForeground(new java.awt.Color(255, 255, 255));
+        lblNombreAudio.setText("SMELLS LIKE TEEN SPIRIT");
+
+        lblTipoAudio.setFont(new java.awt.Font("Arial Black", 0, 16)); // NOI18N
+        lblTipoAudio.setForeground(new java.awt.Color(153, 153, 153));
+        lblTipoAudio.setText("ROCK");
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/wqe.jpg"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel10)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(lblTipoAudio, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(150, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(lblNombreAudio, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnMeGusta, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(45, 45, 45))))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel10)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblNombreAudio)
+                            .addComponent(btnMeGusta, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblTipoAudio)
+                        .addGap(7, 7, 7)))
+                .addGap(0, 22, Short.MAX_VALUE))
+        );
+
+        PanReproductor.add(jPanel2, java.awt.BorderLayout.LINE_START);
+
+        jPanel4.setBackground(new java.awt.Color(0, 0, 0));
+
+        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnSalir.png"))); // NOI18N
         btnSalir.setContentAreaFilled(false);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(155, 155, 155)
-                .addComponent(btnSalir)
-                .addContainerGap(158, Short.MAX_VALUE))
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(718, Short.MAX_VALUE)
+                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(191, 191, 191))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(128, 128, 128)
-                .addComponent(btnSalir)
-                .addContainerGap(143, Short.MAX_VALUE))
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(33, Short.MAX_VALUE)
+                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27))
         );
+
+        PanReproductor.add(jPanel4, java.awt.BorderLayout.CENTER);
+
+        getContentPane().add(PanReproductor, java.awt.BorderLayout.PAGE_END);
+
+        panCentro.setLayout(new java.awt.BorderLayout());
+
+        panTitulo.setBackground(new java.awt.Color(0, 0, 0));
+
+        lblTituloPestaña.setFont(new java.awt.Font("Arial Black", 0, 36)); // NOI18N
+        lblTituloPestaña.setForeground(new java.awt.Color(255, 255, 255));
+        lblTituloPestaña.setText("Inicio");
+
+        javax.swing.GroupLayout panTituloLayout = new javax.swing.GroupLayout(panTitulo);
+        panTitulo.setLayout(panTituloLayout);
+        panTituloLayout.setHorizontalGroup(
+            panTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panTituloLayout.createSequentialGroup()
+                .addGap(55, 55, 55)
+                .addComponent(lblTituloPestaña)
+                .addContainerGap(1229, Short.MAX_VALUE))
+        );
+        panTituloLayout.setVerticalGroup(
+            panTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panTituloLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblTituloPestaña)
+                .addContainerGap())
+        );
+
+        panCentro.add(panTitulo, java.awt.BorderLayout.NORTH);
+
+        panPrincipal.setPreferredSize(new java.awt.Dimension(1394, 600));
+        panPrincipal.setLayout(new java.awt.CardLayout());
+
+        panTabla.setBackground(new java.awt.Color(0, 0, 0));
+        panTabla.setPreferredSize(new java.awt.Dimension(1405, 1500));
+
+        jScrollPane2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        tblCanciones.setAutoCreateRowSorter(true);
+        tblCanciones.setBackground(new java.awt.Color(0, 0, 0));
+        tblCanciones.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
+        tblCanciones.setForeground(new java.awt.Color(204, 204, 204));
+        tblCanciones.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        tblCanciones.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        tblCanciones.setFillsViewportHeight(true);
+        tblCanciones.setRowHeight(30);
+        tblCanciones.setSelectionBackground(new java.awt.Color(51, 51, 51));
+        tblCanciones.setSelectionForeground(new java.awt.Color(204, 204, 204));
+        tblCanciones.setShowHorizontalLines(false);
+        tblCanciones.setShowVerticalLines(false);
+        jScrollPane2.setViewportView(tblCanciones);
+
+        javax.swing.GroupLayout panTablaLayout = new javax.swing.GroupLayout(panTabla);
+        panTabla.setLayout(panTablaLayout);
+        panTablaLayout.setHorizontalGroup(
+            panTablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panTablaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(252, Short.MAX_VALUE))
+        );
+        panTablaLayout.setVerticalGroup(
+            panTablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panTablaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 694, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        panPrincipal.add(panTabla, "tabla");
+
+        panImagenes.setBackground(new java.awt.Color(0, 0, 0));
+        panImagenes.setPreferredSize(new java.awt.Dimension(1396, 1500));
+        panImagenes.setLayout(new java.awt.BorderLayout());
+
+        panControles1.setBackground(new java.awt.Color(0, 0, 0));
+
+        cboTipoUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jLabel2.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel2.setText("Codigo");
+
+        jLabel5.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel5.setText("Nombres");
+
+        jLabel9.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel9.setText("Marca");
+
+        txtPaterno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPaternoActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel4.setText("Modelo");
+
+        javax.swing.GroupLayout panControles1Layout = new javax.swing.GroupLayout(panControles1);
+        panControles1.setLayout(panControles1Layout);
+        panControles1Layout.setHorizontalGroup(
+            panControles1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panControles1Layout.createSequentialGroup()
+                .addGroup(panControles1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panControles1Layout.createSequentialGroup()
+                        .addContainerGap(35, Short.MAX_VALUE)
+                        .addComponent(jLabel2)
+                        .addGap(32, 32, 32))
+                    .addGroup(panControles1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(panControles1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel4))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(panControles1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(txtNombres, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
+                    .addComponent(txtPaterno, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtCodigo)
+                    .addComponent(cboTipoUsuario, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(21, 21, 21))
+        );
+        panControles1Layout.setVerticalGroup(
+            panControles1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panControles1Layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addGroup(panControles1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(39, 39, 39)
+                .addGroup(panControles1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtNombres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
+                .addGap(41, 41, 41)
+                .addGroup(panControles1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(cboTipoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(38, 38, 38)
+                .addGroup(panControles1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(txtPaterno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(87, Short.MAX_VALUE))
+        );
+
+        panImagenes.add(panControles1, java.awt.BorderLayout.WEST);
+
+        panTablaMantenimiento1.setBackground(new java.awt.Color(0, 0, 0));
+
+        tblMantenimiento1.setAutoCreateRowSorter(true);
+        tblMantenimiento1.setBackground(new java.awt.Color(46, 46, 46));
+        tblMantenimiento1.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
+        tblMantenimiento1.setForeground(new java.awt.Color(255, 255, 255));
+        tblMantenimiento1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        tblMantenimiento1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        tblMantenimiento1.setFillsViewportHeight(true);
+        tblMantenimiento1.setRowHeight(30);
+        tblMantenimiento1.setSelectionBackground(new java.awt.Color(51, 51, 51));
+        tblMantenimiento1.setSelectionForeground(new java.awt.Color(204, 204, 204));
+        tblMantenimiento1.setShowHorizontalLines(false);
+        jScrollPane4.setViewportView(tblMantenimiento1);
+
+        javax.swing.GroupLayout panTablaMantenimiento1Layout = new javax.swing.GroupLayout(panTablaMantenimiento1);
+        panTablaMantenimiento1.setLayout(panTablaMantenimiento1Layout);
+        panTablaMantenimiento1Layout.setHorizontalGroup(
+            panTablaMantenimiento1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panTablaMantenimiento1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 1064, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(318, Short.MAX_VALUE))
+        );
+        panTablaMantenimiento1Layout.setVerticalGroup(
+            panTablaMantenimiento1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panTablaMantenimiento1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(37, Short.MAX_VALUE))
+        );
+
+        panImagenes.add(panTablaMantenimiento1, java.awt.BorderLayout.SOUTH);
+
+        PanAmigos1.setBackground(new java.awt.Color(0, 0, 0));
+        PanAmigos1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51), 2));
+        PanAmigos1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        btnAgregar2.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        btnAgregar2.setText("Agregar");
+
+        btnEliminar2.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        btnEliminar2.setText("Eliminar");
+
+        btnEditar1.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        btnEditar1.setText("Actualizar");
+        btnEditar1.setToolTipText("");
+
+        btnCancelar1.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        btnCancelar1.setText("Cancelar");
+        btnCancelar1.setToolTipText("");
+
+        btnEditarNuevaVentana1.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        btnEditarNuevaVentana1.setText("Editar");
+
+        javax.swing.GroupLayout PanAmigos1Layout = new javax.swing.GroupLayout(PanAmigos1);
+        PanAmigos1.setLayout(PanAmigos1Layout);
+        PanAmigos1Layout.setHorizontalGroup(
+            PanAmigos1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanAmigos1Layout.createSequentialGroup()
+                .addGroup(PanAmigos1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanAmigos1Layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addGroup(PanAmigos1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(PanAmigos1Layout.createSequentialGroup()
+                                .addComponent(btnAgregar2)
+                                .addGap(51, 51, 51)
+                                .addComponent(btnEliminar2, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(PanAmigos1Layout.createSequentialGroup()
+                                .addComponent(btnEditar1)
+                                .addGap(35, 35, 35)
+                                .addComponent(btnEditarNuevaVentana1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(PanAmigos1Layout.createSequentialGroup()
+                        .addGap(125, 125, 125)
+                        .addComponent(btnCancelar1)))
+                .addContainerGap(729, Short.MAX_VALUE))
+        );
+        PanAmigos1Layout.setVerticalGroup(
+            PanAmigos1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanAmigos1Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addGroup(PanAmigos1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAgregar2)
+                    .addComponent(btnEliminar2))
+                .addGap(54, 54, 54)
+                .addGroup(PanAmigos1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnEditarNuevaVentana1)
+                    .addComponent(btnEditar1))
+                .addGap(49, 49, 49)
+                .addComponent(btnCancelar1)
+                .addContainerGap(102, Short.MAX_VALUE))
+        );
+
+        panImagenes.add(PanAmigos1, java.awt.BorderLayout.CENTER);
+
+        panPrincipal.add(panImagenes, "imagenes");
+
+        panMantenimiento.setPreferredSize(new java.awt.Dimension(1398, 1500));
+        panMantenimiento.setLayout(new java.awt.BorderLayout());
+
+        panControles.setBackground(new java.awt.Color(0, 0, 0));
+        panControles.setLayout(new java.awt.BorderLayout());
+
+        panControlesNorte.setBackground(new java.awt.Color(0, 0, 0));
+
+        rbtnAudioCancion.setBackground(new java.awt.Color(0, 0, 0));
+        rbtnAudioCancion.setFont(new java.awt.Font("Arial Black", 0, 16)); // NOI18N
+        rbtnAudioCancion.setForeground(new java.awt.Color(204, 204, 204));
+        rbtnAudioCancion.setText("<Nombre>");
+
+        rbtnAudioEpisodio.setBackground(new java.awt.Color(0, 0, 0));
+        rbtnAudioEpisodio.setFont(new java.awt.Font("Arial Black", 0, 16)); // NOI18N
+        rbtnAudioEpisodio.setForeground(new java.awt.Color(204, 204, 204));
+        rbtnAudioEpisodio.setText("<Nombre>");
+
+        Nombre.setFont(new java.awt.Font("Arial Black", 0, 16)); // NOI18N
+        Nombre.setForeground(new java.awt.Color(204, 204, 204));
+        Nombre.setText("Nombre:");
+
+        jLabel14.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel14.setText("<Nombre>");
+
+        javax.swing.GroupLayout panControlesNorteLayout = new javax.swing.GroupLayout(panControlesNorte);
+        panControlesNorte.setLayout(panControlesNorteLayout);
+        panControlesNorteLayout.setHorizontalGroup(
+            panControlesNorteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panControlesNorteLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panControlesNorteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(panControlesNorteLayout.createSequentialGroup()
+                        .addComponent(Nombre)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(panControlesNorteLayout.createSequentialGroup()
+                        .addGap(0, 27, Short.MAX_VALUE)
+                        .addComponent(rbtnAudioCancion)
+                        .addGap(29, 29, 29)
+                        .addComponent(rbtnAudioEpisodio)
+                        .addGap(25, 25, 25))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panControlesNorteLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel14)
+                .addGap(96, 96, 96))
+        );
+        panControlesNorteLayout.setVerticalGroup(
+            panControlesNorteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panControlesNorteLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel14)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panControlesNorteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rbtnAudioEpisodio)
+                    .addComponent(rbtnAudioCancion))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addGroup(panControlesNorteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Nombre)
+                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(6, 6, 6))
+        );
+
+        panControles.add(panControlesNorte, java.awt.BorderLayout.PAGE_START);
+
+        panMantenimientoCard.setLayout(new java.awt.CardLayout());
+
+        panEpisodio.setBackground(new java.awt.Color(0, 0, 0));
+
+        Nombre2.setFont(new java.awt.Font("Arial Black", 0, 16)); // NOI18N
+        Nombre2.setForeground(new java.awt.Color(204, 204, 204));
+        Nombre2.setText("<Nombre>");
+
+        jLabel15.setFont(new java.awt.Font("Arial Black", 0, 16)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel15.setText("<Nombre>");
+
+        jLabel17.setFont(new java.awt.Font("Arial Black", 0, 16)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel17.setText("Descripcion:");
+
+        javax.swing.GroupLayout panEpisodioLayout = new javax.swing.GroupLayout(panEpisodio);
+        panEpisodio.setLayout(panEpisodioLayout);
+        panEpisodioLayout.setHorizontalGroup(
+            panEpisodioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panEpisodioLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panEpisodioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtDescripcionPodcasts)
+                    .addGroup(panEpisodioLayout.createSequentialGroup()
+                        .addComponent(jLabel17)
+                        .addGap(0, 197, Short.MAX_VALUE))
+                    .addGroup(panEpisodioLayout.createSequentialGroup()
+                        .addGroup(panEpisodioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Nombre2)
+                            .addComponent(jLabel15))
+                        .addGap(27, 27, 27)
+                        .addGroup(panEpisodioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtPodcasts)
+                            .addComponent(txtNombreAutor))))
+                .addContainerGap())
+        );
+        panEpisodioLayout.setVerticalGroup(
+            panEpisodioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panEpisodioLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panEpisodioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Nombre2)
+                    .addComponent(txtNombreAutor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addGroup(panEpisodioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(txtPodcasts, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel17)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtDescripcionPodcasts, javax.swing.GroupLayout.DEFAULT_SIZE, 492, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        panMantenimientoCard.add(panEpisodio, "episodio");
+
+        panCancion.setBackground(new java.awt.Color(0, 0, 0));
+
+        cboGenero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboGeneroActionPerformed(evt);
+            }
+        });
+
+        jLabel13.setFont(new java.awt.Font("Arial Black", 0, 16)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel13.setText("Genero:");
+
+        Nombre1.setFont(new java.awt.Font("Arial Black", 0, 16)); // NOI18N
+        Nombre1.setForeground(new java.awt.Color(204, 204, 204));
+        Nombre1.setText("Artista:");
+
+        jLabel16.setFont(new java.awt.Font("Arial Black", 0, 16)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel16.setText("Album:");
+
+        javax.swing.GroupLayout panCancionLayout = new javax.swing.GroupLayout(panCancion);
+        panCancion.setLayout(panCancionLayout);
+        panCancionLayout.setHorizontalGroup(
+            panCancionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panCancionLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panCancionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panCancionLayout.createSequentialGroup()
+                        .addComponent(Nombre1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtNombreArtista, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panCancionLayout.createSequentialGroup()
+                        .addComponent(jLabel16)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtNombreAlbum, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panCancionLayout.createSequentialGroup()
+                        .addComponent(jLabel13)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                        .addComponent(cboGenero, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
+        panCancionLayout.setVerticalGroup(
+            panCancionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panCancionLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panCancionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtNombreArtista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Nombre1))
+                .addGap(31, 31, 31)
+                .addGroup(panCancionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel16)
+                    .addComponent(txtNombreAlbum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
+                .addGroup(panCancionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(cboGenero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(497, Short.MAX_VALUE))
+        );
+
+        panMantenimientoCard.add(panCancion, "cancion");
+
+        panControles.add(panMantenimientoCard, java.awt.BorderLayout.CENTER);
+
+        panControlesSur.setBackground(new java.awt.Color(0, 0, 0));
+
+        btnMostrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnImprimir.png"))); // NOI18N
+        btnMostrar.setBorder(null);
+        btnMostrar.setContentAreaFilled(false);
+        btnMostrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMostrarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panControlesSurLayout = new javax.swing.GroupLayout(panControlesSur);
+        panControlesSur.setLayout(panControlesSurLayout);
+        panControlesSurLayout.setHorizontalGroup(
+            panControlesSurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panControlesSurLayout.createSequentialGroup()
+                .addContainerGap(74, Short.MAX_VALUE)
+                .addComponent(btnMostrar)
+                .addGap(52, 52, 52))
+        );
+        panControlesSurLayout.setVerticalGroup(
+            panControlesSurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panControlesSurLayout.createSequentialGroup()
+                .addGap(86, 86, 86)
+                .addComponent(btnMostrar)
+                .addContainerGap(91, Short.MAX_VALUE))
+        );
+
+        panControles.add(panControlesSur, java.awt.BorderLayout.PAGE_END);
+
+        panMantenimiento.add(panControles, java.awt.BorderLayout.LINE_START);
+
+        panTablaMantenimiento.setBackground(new java.awt.Color(0, 0, 0));
+
+        tblMantenimiento.setAutoCreateRowSorter(true);
+        tblMantenimiento.setBackground(new java.awt.Color(46, 46, 46));
+        tblMantenimiento.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
+        tblMantenimiento.setForeground(new java.awt.Color(255, 255, 255));
+        tblMantenimiento.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        tblMantenimiento.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        tblMantenimiento.setFillsViewportHeight(true);
+        tblMantenimiento.setRowHeight(30);
+        tblMantenimiento.setSelectionBackground(new java.awt.Color(51, 51, 51));
+        tblMantenimiento.setSelectionForeground(new java.awt.Color(204, 204, 204));
+        tblMantenimiento.setShowHorizontalLines(false);
+        jScrollPane1.setViewportView(tblMantenimiento);
+
+        javax.swing.GroupLayout panTablaMantenimientoLayout = new javax.swing.GroupLayout(panTablaMantenimiento);
+        panTablaMantenimiento.setLayout(panTablaMantenimientoLayout);
+        panTablaMantenimientoLayout.setHorizontalGroup(
+            panTablaMantenimientoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panTablaMantenimientoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1224, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        panTablaMantenimientoLayout.setVerticalGroup(
+            panTablaMantenimientoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panTablaMantenimientoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 731, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(256, Short.MAX_VALUE))
+        );
+
+        panMantenimiento.add(panTablaMantenimiento, java.awt.BorderLayout.CENTER);
+
+        panPrincipal.add(panMantenimiento, "mantenimiento");
+
+        panCentro.add(panPrincipal, java.awt.BorderLayout.CENTER);
+
+        getContentPane().add(panCentro, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMostrarActionPerformed
+
+    private void cboGeneroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboGeneroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboGeneroActionPerformed
+
+    private void txtPaternoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPaternoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPaternoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -85,6 +948,261 @@ public class frmPrincipal extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(frmPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -95,6 +1213,85 @@ public class frmPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Nombre;
+    private javax.swing.JLabel Nombre1;
+    private javax.swing.JLabel Nombre2;
+    private javax.swing.JPanel PanAmigos1;
+    private javax.swing.JPanel PanBotones;
+    public javax.swing.JPanel PanReproductor;
+    private javax.swing.JPanel PanTitulo;
+    public javax.swing.JButton btnAgregar2;
+    public javax.swing.JButton btnArtistas;
+    public javax.swing.JButton btnAvanzar;
+    public javax.swing.JButton btnBuscar;
+    public javax.swing.JButton btnCancelar1;
+    public javax.swing.JButton btnCancionesFavoritas;
+    public javax.swing.JButton btnEditar1;
+    public javax.swing.JButton btnEditarNuevaVentana1;
+    public javax.swing.JButton btnEliminar2;
+    public javax.swing.JButton btnHistorial;
+    public javax.swing.JButton btnMantenimiento;
+    public javax.swing.JButton btnMeGusta;
+    public javax.swing.JButton btnMostrar;
+    public javax.swing.JButton btnPlayList;
+    public javax.swing.JButton btnPlayList1;
+    public javax.swing.JButton btnPodcasts;
+    public javax.swing.JButton btnRecomendaciones;
+    public javax.swing.JButton btnRetroceder;
     public javax.swing.JButton btnSalir;
+    public javax.swing.JComboBox<String> cboGenero;
+    public javax.swing.JComboBox<String> cboTipoUsuario;
+    public javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane4;
+    public javax.swing.JLabel lblNombreAudio;
+    public javax.swing.JLabel lblTipoAudio;
+    public javax.swing.JLabel lblTituloPestaña;
+    private javax.swing.JPanel panCancion;
+    public javax.swing.JPanel panCentro;
+    private javax.swing.JPanel panControles;
+    private javax.swing.JPanel panControles1;
+    private javax.swing.JPanel panControlesNorte;
+    private javax.swing.JPanel panControlesSur;
+    private javax.swing.JPanel panEpisodio;
+    private javax.swing.JPanel panImagenes;
+    private javax.swing.JPanel panMantenimiento;
+    public javax.swing.JPanel panMantenimientoCard;
+    public javax.swing.JPanel panPrincipal;
+    private javax.swing.JPanel panTabla;
+    private javax.swing.JPanel panTablaMantenimiento;
+    private javax.swing.JPanel panTablaMantenimiento1;
+    private javax.swing.JPanel panTitulo;
+    public javax.swing.JRadioButton rbtnAudioCancion;
+    public javax.swing.JRadioButton rbtnAudioEpisodio;
+    public javax.swing.JTable tblCanciones;
+    public javax.swing.JTable tblMantenimiento;
+    public javax.swing.JTable tblMantenimiento1;
+    public javax.swing.JTextField txtBuscar;
+    public javax.swing.JTextField txtCodigo;
+    public javax.swing.JTextField txtDescripcionPodcasts;
+    public javax.swing.JTextField txtNombre;
+    public javax.swing.JTextField txtNombreAlbum;
+    public javax.swing.JTextField txtNombreArtista;
+    public javax.swing.JTextField txtNombreAutor;
+    public javax.swing.JTextField txtNombres;
+    public javax.swing.JTextField txtPaterno;
+    public javax.swing.JTextField txtPodcasts;
     // End of variables declaration//GEN-END:variables
 }
