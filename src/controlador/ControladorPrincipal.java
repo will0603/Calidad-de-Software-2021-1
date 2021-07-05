@@ -18,51 +18,27 @@ public class ControladorPrincipal {
     public ControladorPrincipal(frmPrincipal vista) {
         this.vista = vista;
         
-        this.vista.btnMantenimiento.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-              ((CardLayout)vista.panPrincipal.getLayout()).show(vista.panPrincipal, "mantenimiento");
-              vista.lblTituloPestaña.setText("Mantenimiento de objetos");
-            }
-        });
-        
-        this.vista.btnCancionesFavoritas.addActionListener(new ActionListener() {
+        this.vista.btnVendedor.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
               ((CardLayout)vista.panPrincipal.getLayout()).show(vista.panPrincipal, "tabla");
-              vista.lblTituloPestaña.setText("Canciones que te gustan");
+              vista.lblTituloPestaña.setText("Vendedor");
             }
         });
         
-        this.vista.btnHistorial.addActionListener(new ActionListener() {
+        this.vista.btnTecnico.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
               ((CardLayout)vista.panPrincipal.getLayout()).show(vista.panPrincipal, "tabla");
-              vista.lblTituloPestaña.setText("Taller");
+              vista.lblTituloPestaña.setText("Tecnico");
             }
         });
         
-        this.vista.btnArtistas.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-              ((CardLayout)vista.panPrincipal.getLayout()).show(vista.panPrincipal, "imagenes");
-              vista.lblTituloPestaña.setText("Registro");
-            }
-        });
-        
-        this.vista.btnPodcasts.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-              ((CardLayout)vista.panPrincipal.getLayout()).show(vista.panPrincipal, "imagenes");
-              vista.lblTituloPestaña.setText("Facturacion");
-            }
-        });
-        
-        this.vista.btnRecomendaciones.addActionListener(new ActionListener() {
+        this.vista.btnAdministrador.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
              ((CardLayout)vista.panPrincipal.getLayout()).show(vista.panPrincipal, "imagenes");
-             vista.lblTituloPestaña.setText("Especialmente para ti");
+             vista.lblTituloPestaña.setText("Admministrador");
             }
         });
         
@@ -98,7 +74,7 @@ public class ControladorPrincipal {
         vista.setLocationRelativeTo(null);
         vista.setVisible(true);
         ((CardLayout)vista.panPrincipal.getLayout()).show(vista.panPrincipal, "imagenes");
-        vista.lblTituloPestaña.setText("Mantenimiento de objetos");
+        vista.lblTituloPestaña.setText("Administrador");
         limpiarControles();
     }
     

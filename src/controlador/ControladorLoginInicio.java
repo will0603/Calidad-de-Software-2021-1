@@ -38,7 +38,7 @@ public class ControladorLoginInicio {
                        ControladorPrincipal controladorprincipal = new ControladorPrincipal(fprincipal);
                        controladorprincipal.iniciar();
                     }else {
-                        JOptionPane.showMessageDialog(vista, "Error de credenciales");
+                        JOptionPane.showMessageDialog(vista, "Error de credenciales o Usuario invalido");
                     }
                  }else{
                     JOptionPane.showMessageDialog(vista, "Debe ingresar valores en todos los campos" , "Error" , JOptionPane.WARNING_MESSAGE );             

@@ -1,5 +1,6 @@
 
 import controlador.ControladorLoginInicio;
+import modelo.Usuario;
 import vista.frmIniciar;
 
 
@@ -21,6 +22,7 @@ public class AppMain {
       PRIMARY KEY (`codigo`));
         
         */
+        new Usuario(1).eliminar();
         
         frmIniciar fInicio = new frmIniciar();
         ControladorLoginInicio controlador = new ControladorLoginInicio(fInicio);

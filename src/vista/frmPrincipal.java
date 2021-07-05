@@ -28,28 +28,15 @@ public class frmPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         PanTitulo = new javax.swing.JPanel();
-        txtBuscar = new javax.swing.JTextField();
         btnRetroceder = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
         btnAvanzar = new javax.swing.JButton();
-        btnBuscar = new javax.swing.JButton();
         PanBotones = new javax.swing.JPanel();
-        btnRecomendaciones = new javax.swing.JButton();
+        btnAdministrador = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        btnHistorial = new javax.swing.JButton();
-        btnCancionesFavoritas = new javax.swing.JButton();
-        btnArtistas = new javax.swing.JButton();
-        btnPodcasts = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        btnPlayList = new javax.swing.JButton();
-        btnMantenimiento = new javax.swing.JButton();
-        btnPlayList1 = new javax.swing.JButton();
+        btnTecnico = new javax.swing.JButton();
+        btnVendedor = new javax.swing.JButton();
         PanReproductor = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        btnMeGusta = new javax.swing.JButton();
-        lblNombreAudio = new javax.swing.JLabel();
-        lblTipoAudio = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         btnSalir = new javax.swing.JButton();
@@ -63,13 +50,11 @@ public class frmPrincipal extends javax.swing.JFrame {
         panImagenes = new javax.swing.JPanel();
         panControles1 = new javax.swing.JPanel();
         cboTipoUsuario = new javax.swing.JComboBox<>();
-        jLabel2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         txtNombres = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         txtPaterno = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        txtCodigo = new javax.swing.JTextField();
         panTablaMantenimiento1 = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         tblMantenimiento1 = new javax.swing.JTable();
@@ -110,13 +95,9 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(1370, 1004));
 
         PanTitulo.setBackground(new java.awt.Color(0, 0, 0));
         PanTitulo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51), 2));
-
-        txtBuscar.setBackground(new java.awt.Color(204, 204, 204));
-        txtBuscar.setFont(new java.awt.Font("Arial Black", 0, 22)); // NOI18N
 
         btnRetroceder.setFont(new java.awt.Font("Arial Black", 0, 13)); // NOI18N
         btnRetroceder.setForeground(new java.awt.Color(204, 204, 204));
@@ -124,52 +105,30 @@ public class frmPrincipal extends javax.swing.JFrame {
         btnRetroceder.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnRetroceder.setContentAreaFilled(false);
 
-        jComboBox1.setBackground(new java.awt.Color(204, 204, 204));
-        jComboBox1.setFont(new java.awt.Font("Arial Black", 0, 13)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Jimmy Cjuro Apaza", "Sesion Privada", "Cuenta", "Configuracion", "Cerrar Sesión" }));
-
-        jComboBox2.setFont(new java.awt.Font("Arial Black", 0, 13)); // NOI18N
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "...", "Archivo", "Editar", "Ver", "Reproduccion", "Ayuda" }));
-
         btnAvanzar.setFont(new java.awt.Font("Arial Black", 0, 13)); // NOI18N
         btnAvanzar.setForeground(new java.awt.Color(204, 204, 204));
         btnAvanzar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnAvanzar.png"))); // NOI18N
         btnAvanzar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnAvanzar.setContentAreaFilled(false);
 
-        btnBuscar.setText("Buscar");
-
         javax.swing.GroupLayout PanTituloLayout = new javax.swing.GroupLayout(PanTitulo);
         PanTitulo.setLayout(PanTituloLayout);
         PanTituloLayout.setHorizontalGroup(
             PanTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanTituloLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(147, 147, 147)
+                .addGap(239, 239, 239)
                 .addComponent(btnRetroceder, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnAvanzar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(231, 231, 231)
-                .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(198, 198, 198)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(404, Short.MAX_VALUE))
+                .addContainerGap(1279, Short.MAX_VALUE))
         );
         PanTituloLayout.setVerticalGroup(
             PanTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanTituloLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(PanTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(btnRetroceder, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAvanzar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnAvanzar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(5, 5, 5))
         );
 
@@ -178,71 +137,31 @@ public class frmPrincipal extends javax.swing.JFrame {
         PanBotones.setBackground(new java.awt.Color(0, 0, 0));
         PanBotones.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51), 2));
 
-        btnRecomendaciones.setBackground(new java.awt.Color(0, 0, 0));
-        btnRecomendaciones.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
-        btnRecomendaciones.setForeground(new java.awt.Color(204, 204, 204));
-        btnRecomendaciones.setText("Inventario");
-        btnRecomendaciones.setBorder(null);
-        btnRecomendaciones.setContentAreaFilled(false);
+        btnAdministrador.setBackground(new java.awt.Color(0, 0, 0));
+        btnAdministrador.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        btnAdministrador.setForeground(new java.awt.Color(204, 204, 204));
+        btnAdministrador.setText("Administrador");
+        btnAdministrador.setBorder(null);
+        btnAdministrador.setContentAreaFilled(false);
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel1.setText("TU BIBLIOTECA");
+        jLabel1.setText("MODULOS");
 
-        btnHistorial.setBackground(new java.awt.Color(0, 0, 0));
-        btnHistorial.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
-        btnHistorial.setForeground(new java.awt.Color(204, 204, 204));
-        btnHistorial.setText("Facturacion");
-        btnHistorial.setBorder(null);
-        btnHistorial.setContentAreaFilled(false);
+        btnTecnico.setBackground(new java.awt.Color(0, 0, 0));
+        btnTecnico.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        btnTecnico.setForeground(new java.awt.Color(204, 204, 204));
+        btnTecnico.setText("Tecnico");
+        btnTecnico.setBorder(null);
+        btnTecnico.setContentAreaFilled(false);
 
-        btnCancionesFavoritas.setBackground(new java.awt.Color(0, 0, 0));
-        btnCancionesFavoritas.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
-        btnCancionesFavoritas.setForeground(new java.awt.Color(204, 204, 204));
-        btnCancionesFavoritas.setText("Taller");
-        btnCancionesFavoritas.setBorder(null);
-        btnCancionesFavoritas.setContentAreaFilled(false);
-
-        btnArtistas.setBackground(new java.awt.Color(0, 0, 0));
-        btnArtistas.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
-        btnArtistas.setForeground(new java.awt.Color(204, 204, 204));
-        btnArtistas.setText("<Nombre>");
-        btnArtistas.setBorder(null);
-        btnArtistas.setContentAreaFilled(false);
-
-        btnPodcasts.setBackground(new java.awt.Color(0, 0, 0));
-        btnPodcasts.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
-        btnPodcasts.setForeground(new java.awt.Color(204, 204, 204));
-        btnPodcasts.setText("<Nombre>");
-        btnPodcasts.setBorder(null);
-        btnPodcasts.setContentAreaFilled(false);
-
-        jLabel3.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel3.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel3.setText("COLECCIONES");
-
-        btnPlayList.setBackground(new java.awt.Color(0, 0, 0));
-        btnPlayList.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
-        btnPlayList.setForeground(new java.awt.Color(204, 204, 204));
-        btnPlayList.setText("<Nombre>");
-        btnPlayList.setBorder(null);
-        btnPlayList.setContentAreaFilled(false);
-
-        btnMantenimiento.setBackground(new java.awt.Color(0, 0, 0));
-        btnMantenimiento.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
-        btnMantenimiento.setForeground(new java.awt.Color(204, 204, 204));
-        btnMantenimiento.setText("Mantenimiento");
-        btnMantenimiento.setBorder(null);
-        btnMantenimiento.setContentAreaFilled(false);
-
-        btnPlayList1.setBackground(new java.awt.Color(0, 0, 0));
-        btnPlayList1.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
-        btnPlayList1.setForeground(new java.awt.Color(204, 204, 204));
-        btnPlayList1.setText("<Nombre>");
-        btnPlayList1.setBorder(null);
-        btnPlayList1.setContentAreaFilled(false);
+        btnVendedor.setBackground(new java.awt.Color(0, 0, 0));
+        btnVendedor.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        btnVendedor.setForeground(new java.awt.Color(204, 204, 204));
+        btnVendedor.setText("Vendedor");
+        btnVendedor.setBorder(null);
+        btnVendedor.setContentAreaFilled(false);
 
         javax.swing.GroupLayout PanBotonesLayout = new javax.swing.GroupLayout(PanBotones);
         PanBotones.setLayout(PanBotonesLayout);
@@ -251,17 +170,11 @@ public class frmPrincipal extends javax.swing.JFrame {
             .addGroup(PanBotonesLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(PanBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
                     .addComponent(jLabel1)
-                    .addComponent(btnRecomendaciones)
-                    .addComponent(btnHistorial)
-                    .addComponent(btnCancionesFavoritas)
-                    .addComponent(btnArtistas)
-                    .addComponent(btnPodcasts)
-                    .addComponent(btnMantenimiento)
-                    .addComponent(btnPlayList1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnPlayList, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnAdministrador)
+                    .addComponent(btnTecnico)
+                    .addComponent(btnVendedor))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         PanBotonesLayout.setVerticalGroup(
             PanBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -269,24 +182,12 @@ public class frmPrincipal extends javax.swing.JFrame {
                 .addGap(67, 67, 67)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addComponent(btnRecomendaciones)
+                .addComponent(btnAdministrador)
                 .addGap(18, 18, 18)
-                .addComponent(btnHistorial)
+                .addComponent(btnTecnico)
                 .addGap(18, 18, 18)
-                .addComponent(btnCancionesFavoritas)
-                .addGap(18, 18, 18)
-                .addComponent(btnMantenimiento)
-                .addGap(18, 18, 18)
-                .addComponent(btnArtistas)
-                .addGap(18, 18, 18)
-                .addComponent(btnPodcasts)
-                .addGap(29, 29, 29)
-                .addComponent(jLabel3)
-                .addGap(18, 18, 18)
-                .addComponent(btnPlayList)
-                .addGap(18, 18, 18)
-                .addComponent(btnPlayList1)
-                .addContainerGap(317, Short.MAX_VALUE))
+                .addComponent(btnVendedor)
+                .addContainerGap(639, Short.MAX_VALUE))
         );
 
         getContentPane().add(PanBotones, java.awt.BorderLayout.LINE_START);
@@ -298,20 +199,7 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
 
-        btnMeGusta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnNogusta.png"))); // NOI18N
-        btnMeGusta.setBorder(null);
-        btnMeGusta.setContentAreaFilled(false);
-
-        lblNombreAudio.setBackground(new java.awt.Color(255, 255, 255));
-        lblNombreAudio.setFont(new java.awt.Font("Arial Black", 0, 16)); // NOI18N
-        lblNombreAudio.setForeground(new java.awt.Color(255, 255, 255));
-        lblNombreAudio.setText("SMELLS LIKE TEEN SPIRIT");
-
-        lblTipoAudio.setFont(new java.awt.Font("Arial Black", 0, 16)); // NOI18N
-        lblTipoAudio.setForeground(new java.awt.Color(153, 153, 153));
-        lblTipoAudio.setText("ROCK");
-
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/wqe.jpg"))); // NOI18N
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/lblLogoTaller.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -320,31 +208,13 @@ public class frmPrincipal extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel10)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(lblTipoAudio, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(150, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(lblNombreAudio, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnMeGusta, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(45, 45, 45))))
+                .addContainerGap(280, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel10)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblNombreAudio)
-                            .addComponent(btnMeGusta, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblTipoAudio)
-                        .addGap(7, 7, 7)))
-                .addGap(0, 22, Short.MAX_VALUE))
+                .addComponent(jLabel10)
+                .addGap(0, 3, Short.MAX_VALUE))
         );
 
         PanReproductor.add(jPanel2, java.awt.BorderLayout.LINE_START);
@@ -359,16 +229,16 @@ public class frmPrincipal extends javax.swing.JFrame {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(718, Short.MAX_VALUE)
+                .addContainerGap(904, Short.MAX_VALUE)
                 .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(191, 191, 191))
+                .addGap(38, 38, 38))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(33, Short.MAX_VALUE)
+                .addContainerGap(15, Short.MAX_VALUE)
                 .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27))
+                .addGap(35, 35, 35))
         );
 
         PanReproductor.add(jPanel4, java.awt.BorderLayout.CENTER);
@@ -381,7 +251,7 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         lblTituloPestaña.setFont(new java.awt.Font("Arial Black", 0, 36)); // NOI18N
         lblTituloPestaña.setForeground(new java.awt.Color(255, 255, 255));
-        lblTituloPestaña.setText("Inicio");
+        lblTituloPestaña.setText("<Titulo>");
 
         javax.swing.GroupLayout panTituloLayout = new javax.swing.GroupLayout(panTitulo);
         panTitulo.setLayout(panTituloLayout);
@@ -390,7 +260,7 @@ public class frmPrincipal extends javax.swing.JFrame {
             .addGroup(panTituloLayout.createSequentialGroup()
                 .addGap(55, 55, 55)
                 .addComponent(lblTituloPestaña)
-                .addContainerGap(1229, Short.MAX_VALUE))
+                .addContainerGap(1222, Short.MAX_VALUE))
         );
         panTituloLayout.setVerticalGroup(
             panTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -441,14 +311,14 @@ public class frmPrincipal extends javax.swing.JFrame {
             .addGroup(panTablaLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(252, Short.MAX_VALUE))
+                .addContainerGap(297, Short.MAX_VALUE))
         );
         panTablaLayout.setVerticalGroup(
             panTablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panTablaLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 694, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(86, Short.MAX_VALUE))
         );
 
         panPrincipal.add(panTabla, "tabla");
@@ -460,10 +330,6 @@ public class frmPrincipal extends javax.swing.JFrame {
         panControles1.setBackground(new java.awt.Color(0, 0, 0));
 
         cboTipoUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jLabel2.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel2.setText("Codigo");
 
         jLabel5.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(204, 204, 204));
@@ -488,33 +354,22 @@ public class frmPrincipal extends javax.swing.JFrame {
         panControles1Layout.setHorizontalGroup(
             panControles1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panControles1Layout.createSequentialGroup()
-                .addGroup(panControles1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panControles1Layout.createSequentialGroup()
-                        .addContainerGap(35, Short.MAX_VALUE)
-                        .addComponent(jLabel2)
-                        .addGap(32, 32, 32))
-                    .addGroup(panControles1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(panControles1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel4))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap()
+                .addGroup(panControles1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                 .addGroup(panControles1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(txtNombres, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
                     .addComponent(txtPaterno, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtCodigo)
                     .addComponent(cboTipoUsuario, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(21, 21, 21))
+                .addGap(81, 81, 81))
         );
         panControles1Layout.setVerticalGroup(
             panControles1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panControles1Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addGroup(panControles1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(39, 39, 39)
+                .addGap(97, 97, 97)
                 .addGroup(panControles1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtNombres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
@@ -526,7 +381,7 @@ public class frmPrincipal extends javax.swing.JFrame {
                 .addGroup(panControles1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(txtPaterno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(87, Short.MAX_VALUE))
+                .addContainerGap(129, Short.MAX_VALUE))
         );
 
         panImagenes.add(panControles1, java.awt.BorderLayout.WEST);
@@ -563,7 +418,7 @@ public class frmPrincipal extends javax.swing.JFrame {
             .addGroup(panTablaMantenimiento1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 1064, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(318, Short.MAX_VALUE))
+                .addContainerGap(363, Short.MAX_VALUE))
         );
         panTablaMantenimiento1Layout.setVerticalGroup(
             panTablaMantenimiento1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -616,7 +471,7 @@ public class frmPrincipal extends javax.swing.JFrame {
                     .addGroup(PanAmigos1Layout.createSequentialGroup()
                         .addGap(125, 125, 125)
                         .addComponent(btnCancelar1)))
-                .addContainerGap(729, Short.MAX_VALUE))
+                .addContainerGap(714, Short.MAX_VALUE))
         );
         PanAmigos1Layout.setVerticalGroup(
             PanAmigos1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -631,7 +486,7 @@ public class frmPrincipal extends javax.swing.JFrame {
                     .addComponent(btnEditar1))
                 .addGap(49, 49, 49)
                 .addComponent(btnCancelar1)
-                .addContainerGap(102, Short.MAX_VALUE))
+                .addContainerGap(144, Short.MAX_VALUE))
         );
 
         panImagenes.add(PanAmigos1, java.awt.BorderLayout.CENTER);
@@ -756,7 +611,7 @@ public class frmPrincipal extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel17)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtDescripcionPodcasts, javax.swing.GroupLayout.DEFAULT_SIZE, 492, Short.MAX_VALUE)
+                .addComponent(txtDescripcionPodcasts, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -818,7 +673,7 @@ public class frmPrincipal extends javax.swing.JFrame {
                 .addGroup(panCancionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13)
                     .addComponent(cboGenero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(497, Short.MAX_VALUE))
+                .addContainerGap(290, Short.MAX_VALUE))
         );
 
         panMantenimientoCard.add(panCancion, "cancion");
@@ -888,7 +743,7 @@ public class frmPrincipal extends javax.swing.JFrame {
             panTablaMantenimientoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panTablaMantenimientoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1224, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1084, Short.MAX_VALUE)
                 .addContainerGap())
         );
         panTablaMantenimientoLayout.setVerticalGroup(
@@ -896,7 +751,7 @@ public class frmPrincipal extends javax.swing.JFrame {
             .addGroup(panTablaMantenimientoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 731, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(256, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         panMantenimiento.add(panTablaMantenimiento, java.awt.BorderLayout.CENTER);
@@ -1220,29 +1075,20 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel PanBotones;
     public javax.swing.JPanel PanReproductor;
     private javax.swing.JPanel PanTitulo;
+    public javax.swing.JButton btnAdministrador;
     public javax.swing.JButton btnAgregar2;
-    public javax.swing.JButton btnArtistas;
     public javax.swing.JButton btnAvanzar;
-    public javax.swing.JButton btnBuscar;
     public javax.swing.JButton btnCancelar1;
-    public javax.swing.JButton btnCancionesFavoritas;
     public javax.swing.JButton btnEditar1;
     public javax.swing.JButton btnEditarNuevaVentana1;
     public javax.swing.JButton btnEliminar2;
-    public javax.swing.JButton btnHistorial;
-    public javax.swing.JButton btnMantenimiento;
-    public javax.swing.JButton btnMeGusta;
     public javax.swing.JButton btnMostrar;
-    public javax.swing.JButton btnPlayList;
-    public javax.swing.JButton btnPlayList1;
-    public javax.swing.JButton btnPodcasts;
-    public javax.swing.JButton btnRecomendaciones;
     public javax.swing.JButton btnRetroceder;
     public javax.swing.JButton btnSalir;
+    public javax.swing.JButton btnTecnico;
+    public javax.swing.JButton btnVendedor;
     public javax.swing.JComboBox<String> cboGenero;
     public javax.swing.JComboBox<String> cboTipoUsuario;
-    public javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel13;
@@ -1250,8 +1096,6 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel9;
@@ -1260,8 +1104,6 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane4;
-    public javax.swing.JLabel lblNombreAudio;
-    public javax.swing.JLabel lblTipoAudio;
     public javax.swing.JLabel lblTituloPestaña;
     private javax.swing.JPanel panCancion;
     public javax.swing.JPanel panCentro;
@@ -1283,8 +1125,6 @@ public class frmPrincipal extends javax.swing.JFrame {
     public javax.swing.JTable tblCanciones;
     public javax.swing.JTable tblMantenimiento;
     public javax.swing.JTable tblMantenimiento1;
-    public javax.swing.JTextField txtBuscar;
-    public javax.swing.JTextField txtCodigo;
     public javax.swing.JTextField txtDescripcionPodcasts;
     public javax.swing.JTextField txtNombre;
     public javax.swing.JTextField txtNombreAlbum;
