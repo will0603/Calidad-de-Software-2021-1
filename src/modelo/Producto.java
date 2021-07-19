@@ -16,8 +16,9 @@ import java.sql.SQLException;
 public class Producto {
     private int id;
     private String nombre;
+   // private String codigo;
     private int cantidad;
-    private float precio;
+    private float precio; //precio unitario
 
     public Producto(String nombre, int cantidad, float precio) throws InvalidNombreException {
         setId();

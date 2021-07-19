@@ -6,10 +6,13 @@
 package ordendetrabajo;
 
 import controlador.ControladorGuiadeServicio;
+import controlador.ControladorGuiadeVenta;
 import controlador.ControladorLoginInicio;
 import general.Sistema;
+import javax.swing.UIManager;
 import vista.frmGuiadeServicio;
 import vista.frmIniciar;
+import vista.testVenta;
 
 /**
  *
@@ -39,6 +42,7 @@ public class frmMenu extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -90,8 +94,16 @@ public class frmMenu extends javax.swing.JFrame {
         jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ordendetrabajo/add.png"))); // NOI18N
         jMenu3.setText("Agregar");
 
+        jMenuItem2.setText("Guia de Venta");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem2);
+
         jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ordendetrabajo/job.png"))); // NOI18N
-        jMenuItem4.setText("Orden de Servicio");
+        jMenuItem4.setText("Guia de Servicio");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem4ActionPerformed(evt);
@@ -185,6 +197,20 @@ public class frmMenu extends javax.swing.JFrame {
         controlador.iniciar();
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+            testVenta vista = new testVenta();
+            ControladorGuiadeVenta control = new ControladorGuiadeVenta(vista);
+            control.iniciar();
+        }
+        catch (Exception e) {
+        }
+        
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -230,6 +256,7 @@ public class frmMenu extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
