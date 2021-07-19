@@ -200,15 +200,9 @@ public class frmMenu extends javax.swing.JFrame {
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
         dispose();
-        try {
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-            testVenta vista = new testVenta();
-            ControladorGuiadeVenta control = new ControladorGuiadeVenta(vista);
-            control.iniciar();
-        }
-        catch (Exception e) {
-        }
-        
+        testVenta vista = new testVenta();
+        ControladorGuiadeVenta control = new ControladorGuiadeVenta(vista);
+        control.iniciar();
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**

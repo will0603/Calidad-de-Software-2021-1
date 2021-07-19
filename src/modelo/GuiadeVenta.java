@@ -24,6 +24,10 @@ public class GuiadeVenta {
         this.igv = igv;
         this.cliente = cliente;
     }
+
+    public GuiadeVenta() {
+        setId();
+    }
     
     public String insertar(){
         Conexion conexion = new Conexion();

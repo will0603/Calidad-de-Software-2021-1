@@ -13,7 +13,6 @@ import java.sql.SQLException;
  * @author LENOVO
  */
 public class GuiaVentaporProducto {
-    //private int id;
     private GuiadeVenta venta;
     private String accesorio;
     private int cantidad;

@@ -428,7 +428,7 @@ public class testVenta extends javax.swing.JFrame {
     public javax.swing.JTextField txtIGV;
     public javax.swing.JTextField txtNombre;
     public javax.swing.JTextField txtNombreProducto;
-    private javax.swing.JTextField txtNumerodeGuia;
+    public javax.swing.JTextField txtNumerodeGuia;
     public javax.swing.JTextField txtTotal;
     // End of variables declaration//GEN-END:variables
 }

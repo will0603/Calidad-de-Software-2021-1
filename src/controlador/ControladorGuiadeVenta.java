@@ -34,15 +34,13 @@ public class ControladorGuiadeVenta {
     private testVenta vista;
     
     public void iniciar(){
-        //vista.iniciar();
+        vista.txtNumerodeGuia.setText(String.valueOf(new GuiadeVenta().getId()));
+        vista.txtNumerodeGuia.setEnabled(false);
         vista.setLocationRelativeTo(null);
         vista.setVisible(true);
-        
     }
     
     public ControladorGuiadeVenta(testVenta vista){
-        
-        
         this.vista = vista;
         String timeStamp = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(Calendar.getInstance().getTime());
         vista.txtFechaActual.setText(timeStamp);
