@@ -13,7 +13,7 @@ import javax.swing.UIManager;
 import vista.frmBuscarGuiaVentas;
 import vista.frmGuiadeServicio;
 import vista.frmIniciar;
-import vista.testVenta;
+import vista.frmGuiaVenta;
 
 /**
  *
@@ -53,6 +53,11 @@ public class frmMenu extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 51, 51));
         setUndecorated(true);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -203,10 +208,18 @@ public class frmMenu extends javax.swing.JFrame {
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
         dispose();
-        testVenta vista = new testVenta();
+        frmGuiaVenta vista = new frmGuiaVenta();
         ControladorGuiadeVenta control = new ControladorGuiadeVenta(vista);
         control.iniciar();
     }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        dispose();
+        Sistema.usuario.salir();
+        frmIniciar fInicio = new frmIniciar();
+        ControladorLoginInicio controlador = new ControladorLoginInicio(fInicio);
+        controlador.iniciar();
+    }//GEN-LAST:event_formWindowClosing
 
     /**
      * @param args the command line arguments

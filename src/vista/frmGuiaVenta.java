@@ -11,12 +11,12 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author LENOVO
  */
-public class testVenta extends javax.swing.JFrame {
+public class frmGuiaVenta extends javax.swing.JFrame {
 
     /**
      * Creates new form testVenta
      */
-    public testVenta() {
+    public frmGuiaVenta() {
         initComponents();
     }
     
@@ -108,6 +108,11 @@ public class testVenta extends javax.swing.JFrame {
         jLabel11.setText("Total:");
 
         btnEnviar.setText("Enviar");
+        btnEnviar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEnviarActionPerformed(evt);
+            }
+        });
 
         jLabel8.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
         jLabel8.setText("GUIA DE VENTA");
@@ -356,6 +361,10 @@ public class testVenta extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCelularActionPerformed
 
+    private void btnEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEnviarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -373,14 +382,18 @@ public class testVenta extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(testVenta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmGuiaVenta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(testVenta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmGuiaVenta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(testVenta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmGuiaVenta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(testVenta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmGuiaVenta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        
+
         //</editor-fold>
         //</editor-fold>
         

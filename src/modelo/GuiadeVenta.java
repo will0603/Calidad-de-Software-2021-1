@@ -25,6 +25,10 @@ public class GuiadeVenta {
         this.cliente = cliente;
     }
 
+    public GuiadeVenta(int id) {
+        this.id = id;
+    }
+
     public GuiadeVenta() {
         setId();
     }
@@ -37,6 +41,28 @@ public class GuiadeVenta {
     @Override
     public String toString() {
         return "GuiaVenta{" + "id=" + id + ", total=" + total + ", igv=" + igv + ", cliente=" + cliente + '}';
+    }
+    
+    public boolean consultar() {
+        Conexion conexion = new Conexion();
+        String SQL = "select * from guiaventa where idguiaventa='"+this.id+"'";
+        ResultSet resultado = conexion.consultar(SQL);
+        int fk_cliente;
+        try {
+            if (resultado.next()){ 
+            this.total=resultado.getFloat("total");
+            this.igv=resultado.getFloat("igv");
+            fk_cliente = resultado.getInt("cliente_idcliente");
+            this.cliente = new Cliente(fk_cliente);
+            this.cliente.consultar();
+            return true;
+            }else{
+                return false;
+            }
+        }catch(SQLException e){
+            e.printStackTrace();
+            return false;
+        }
     }
     
     public void setId() {
@@ -60,4 +86,18 @@ public class GuiadeVenta {
     public int getId() {
         return id;
     }
+
+    public float getTotal() {
+        return total;
+    }
+
+    public float getIgv() {
+        return igv;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+    
+    
 }

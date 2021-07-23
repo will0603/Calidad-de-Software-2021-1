@@ -31,6 +31,10 @@ public class Accesorio {
         this.precio = precio;
         
     }
+    public Accesorio(int id) {
+        this.id = id;
+    }
+
     public Accesorio(String codigo) {
         this.codigo = codigo;
     }
@@ -64,6 +68,27 @@ public class Accesorio {
         return conexion.ejecutar(SQL);
     }
     
+       public boolean consultar() {
+        Conexion conexion = new Conexion();
+        String SQL = "select * from producto where idproducto='"+this.id+"'";
+        ResultSet resultado = conexion.consultar(SQL);
+        try {
+            if (resultado.next()){ 
+            this.nombre=resultado.getString("nombre");
+            this.codigo=resultado.getString("codigo");
+            this.cantidad=resultado.getInt("cantidad");
+            this.precio=resultado.getFloat("precio_unitario");
+            this.descripcion=resultado.getString("descripcion");
+            return true;
+            }else{
+                return false;
+            }
+        }catch(SQLException e){
+            e.printStackTrace();
+            return false;
+        }
+    }
+       
     public String[] setDatos(String[] data) throws InvalidNombreException{
         Conexion conexion = new Conexion();
         String SQL = "select *  FROM producto WHERE codigo='"+codigo+"'";
@@ -88,4 +113,26 @@ public class Accesorio {
         }
         return data;
     }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public float getPrecio() {
+        return precio;
+    }
+    
+    
 }

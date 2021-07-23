@@ -26,6 +26,10 @@ public class Cliente {
         this.numeroDeCelular = numeroDeCelular;
         this.correo = correo;
     }
+
+    public Cliente(int id) {
+        this.id = id;
+    }
     
     public void setId() {
         Conexion conexion = new Conexion();
@@ -49,9 +53,46 @@ public class Cliente {
         String SQL = "insert into cliente (idcliente,nombre,dni,nroCelular,correo) values ('"+this.id+"','"+this.nombre+"','"+this.dni+"','"+this.numeroDeCelular+"','"+this.correo+"')";
         return conexion.ejecutar(SQL);
     }
+    
+    public boolean consultar() {
+        Conexion conexion = new Conexion();
+        String SQL = "select * from cliente where idcliente='"+this.id+"'";
+        ResultSet resultado = conexion.consultar(SQL);
+        int fk_cliente;
+        try {
+            if (resultado.next()){ 
+            this.nombre=resultado.getString("nombre");
+            this.dni=resultado.getString("dni");
+            this.numeroDeCelular=resultado.getString("nroCelular");
+            this.correo=resultado.getString("correo");
+            return true;
+            }else{
+                return false;
+            }
+        }catch(SQLException e){
+            e.printStackTrace();
+            return false;
+        }
+    }
 
     public int getId() {
         return id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getDni() {
+        return dni;
+    }
+
+    public String getNumeroDeCelular() {
+        return numeroDeCelular;
+    }
+
+    public String getCorreo() {
+        return correo;
     }
     
 }

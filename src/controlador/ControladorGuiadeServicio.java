@@ -8,6 +8,8 @@ package controlador;
 import static java.awt.SystemColor.menu;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 import javax.swing.JOptionPane;
 import modelo.Celular;
 import modelo.Cliente;
@@ -69,6 +71,50 @@ public class ControladorGuiadeServicio {
                 }else{
                     JOptionPane.showMessageDialog(vista, "Debe ingresar valores en todos los campos" , "Error" , JOptionPane.WARNING_MESSAGE );
                 }
+            }
+        });
+        
+        vista.addWindowListener(new WindowListener() {
+            @Override
+            public void windowOpened(WindowEvent e) {
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void windowClosing(WindowEvent e) {
+               int opcion = JOptionPane.showConfirmDialog(vista, "¿Desea salir de la app?",
+                                "Sistema de Personal", 0, JOptionPane.OK_CANCEL_OPTION);
+                if( opcion == JOptionPane.OK_OPTION){
+                    vista.dispose();
+                    frmMenu vista1 = new frmMenu();
+                    vista1.setLocationRelativeTo(null);
+                    vista1.setVisible(true);
+                }
+            }
+
+            @Override
+            public void windowClosed(WindowEvent e) {
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void windowIconified(WindowEvent e) {
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void windowDeiconified(WindowEvent e) {
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void windowActivated(WindowEvent e) {
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void windowDeactivated(WindowEvent e) {
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
         });
     }

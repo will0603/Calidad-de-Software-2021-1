@@ -7,12 +7,14 @@ package controlador;
 
 
 import excepciones.InvalidNombreException;
+import general.Sistema;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -24,14 +26,15 @@ import modelo.Conexion;
 import modelo.GuiaVentaporProducto;
 import modelo.GuiadeVenta;
 import ordendetrabajo.frmMenu;
-import vista.testVenta;
+import utils.Email;
+import vista.frmGuiaVenta;
 
 /**
  *
  * @author LENOVO
  */
 public class ControladorGuiadeVenta {
-    private testVenta vista;
+    private frmGuiaVenta vista;
     
     public void iniciar(){
         vista.txtNumerodeGuia.setText(String.valueOf(new GuiadeVenta().getId()));
@@ -40,7 +43,7 @@ public class ControladorGuiadeVenta {
         vista.setVisible(true);
     }
     
-    public ControladorGuiadeVenta(testVenta vista){
+    public ControladorGuiadeVenta(frmGuiaVenta vista){
         this.vista = vista;
         String timeStamp = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(Calendar.getInstance().getTime());
         vista.txtFechaActual.setText(timeStamp);
@@ -232,21 +235,45 @@ public class ControladorGuiadeVenta {
         vista.btnEnviar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
                 Cliente cliente = new Cliente(vista.txtNombre.getText(), vista.txtDni.getText(), vista.txtCelular.getText(), vista.txtCorreo.getText());
                 GuiadeVenta venta = new GuiadeVenta(Float.parseFloat(vista.txtTotal.getText()),Float.parseFloat(vista.txtIGV.getText()), cliente );
-                if(vista.tblLista.getRowCount() != 0){
-                    for(int i=0; i < vista.tblLista.getRowCount(); i++){
-                        String texto = vista.tblLista.getValueAt(i, 0).toString();
-                        //int idproducto = Integer.parseInt(texto);
-                        String texto2 = vista.tblLista.getValueAt(i, 3).toString();
-                        int cant = Integer.parseInt(texto2);
-                        GuiaVentaporProducto ventaporproducto = new GuiaVentaporProducto(venta,texto,cant);
-                        //System.out.println(ventaporproducto.insertar());
-                    }
-                
-                }
-              
+        
+                String mensaje = "<div style='width: 400px; margin: 100px auto; background: blanchedalmond; text-align: center;'>"
+                + "<h1>Tu nota de venta de DevCell</h1>"
+                + "<p>"+new Date()+"</p>"
+                + "<p>Numero de orden: "+venta.getId()+"</p>"
+                + "<div style='border: 1px solid black;'>"
+                + "<div style='display:flex; padding-left:20px;'>"
+                + "<p>IGV </p>"
+                + "<p style='margin-left:200px;'>"+venta.getIgv()+"</p>"
+                + "</div>"
+                + "<p style='text-align:left;padding-left:20px;'>3 meses</p>"
+                + "</div>"
+                + "<div style='display:flex;border: 1px solid black;padding-left:20px'>"
+                + "<p>Total</p>"
+                + "<p style='margin-left:270px;'>"+venta.getTotal()+"</p>"
+                + "</div>"
+                + "<div>"
+                + "<p>Metodo de pago</p>"
+                + "<p>Efectivo)</p>"
+                + "<p>Nombre de Cliente</p>"
+                + "<p>"+venta.getCliente().getNombre()+"</p>"
+                + "</div>"
+                + "<p style='font-size: 10px;'>Aceptas que, si no cancelas tu deuda antes que termine el<br>periodo de espera, se te debitará automáticamente un cargo mensual<br>"
+                + "de S/. "+venta.getTotal()+" por su compra hasta que canceles tu deuda.<br>Aplican <a>Términos y condiciones</a>. Puedes cancelar tu suscripción de<br>"
+                + "Spotify Premium en cualquier momento desde la <a>pagina</a> de tu cuenta<br>siguiendo estas <a>instrucciones</a></p>"
+                + "<p style='padding: 10px 0;'>DevCell</p>"
+                + "<p style='border-top: 1px solid black; border-bottom: 1px solid black;padding: 7px 0;'>Obtén DevCell para: iPhone | iPad | Android | Otro</p>"
+                + "<p style='font-size: 10px;'>Este mensaje fue enviado a <a>"+venta.getCliente().getCorreo()+"</a>. Si quieres hacernos alguna<br>pregunta o tienes algun reclamo, no dudes en contactarnos</p>"
+                + "<p style='padding: 10px 0;'>Terminos de uso | Requerimientos tecnicos | Contactanos</p>"
+                + "<p style='font-size: 10px;'>Direccion y contacto</p>"
+                + "</div>";
+
+                Email email =  new Email(Sistema.usuario.getEmail(), "Nota de Venta", mensaje);
+
+                Thread enviar = new Thread(email);
+                enviar.start();
+                    
             }
         });
         
