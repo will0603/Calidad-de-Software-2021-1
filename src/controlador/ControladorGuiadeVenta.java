@@ -64,8 +64,7 @@ public class ControladorGuiadeVenta {
                         GuiaVentaporProducto ventaporproducto = new GuiaVentaporProducto(venta,texto,cant);
                         System.out.println(ventaporproducto.insertar());
                     }
-                  //      t = t + Float.parseFloat(dato);
-                //        vista.txtTotal.setText(Float.toString((float) t));
+                
                 }
                 
                 
@@ -230,6 +229,26 @@ public class ControladorGuiadeVenta {
             }
         });
         
+        vista.btnEnviar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                Cliente cliente = new Cliente(vista.txtNombre.getText(), vista.txtDni.getText(), vista.txtCelular.getText(), vista.txtCorreo.getText());
+                GuiadeVenta venta = new GuiadeVenta(Float.parseFloat(vista.txtTotal.getText()),Float.parseFloat(vista.txtIGV.getText()), cliente );
+                if(vista.tblLista.getRowCount() != 0){
+                    for(int i=0; i < vista.tblLista.getRowCount(); i++){
+                        String texto = vista.tblLista.getValueAt(i, 0).toString();
+                        //int idproducto = Integer.parseInt(texto);
+                        String texto2 = vista.tblLista.getValueAt(i, 3).toString();
+                        int cant = Integer.parseInt(texto2);
+                        GuiaVentaporProducto ventaporproducto = new GuiaVentaporProducto(venta,texto,cant);
+                        //System.out.println(ventaporproducto.insertar());
+                    }
+                
+                }
+              
+            }
+        });
         
         
     }

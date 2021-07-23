@@ -10,6 +10,7 @@ import controlador.ControladorGuiadeVenta;
 import controlador.ControladorLoginInicio;
 import general.Sistema;
 import javax.swing.UIManager;
+import vista.frmBuscarGuiaVentas;
 import vista.frmGuiadeServicio;
 import vista.frmIniciar;
 import vista.testVenta;
@@ -94,6 +95,7 @@ public class frmMenu extends javax.swing.JFrame {
         jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ordendetrabajo/add.png"))); // NOI18N
         jMenu3.setText("Agregar");
 
+        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ordendetrabajo/job.png"))); // NOI18N
         jMenuItem2.setText("Guia de Venta");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -164,7 +166,7 @@ public class frmMenu extends javax.swing.JFrame {
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
-        orderEdit order = new orderEdit();
+        frmBuscarGuiaVentas order = new frmBuscarGuiaVentas();
         order.setLocationRelativeTo(null);
         order.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
@@ -183,9 +185,10 @@ public class frmMenu extends javax.swing.JFrame {
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         // TODO add your handling code here:
-        search s = new search();
-        s.setLocationRelativeTo(null);
-        s.setVisible(true);
+        frmBuscarGuiaVentas order = new frmBuscarGuiaVentas();
+        //search s = new search();
+        order.setLocationRelativeTo(null);
+        order.setVisible(true);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed

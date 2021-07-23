@@ -12,10 +12,11 @@ import java.sql.SQLException;
  *
  * @author LENOVO
  */
+// tabla sola para ingresar 
 public class GuiaVentaporProducto {
     private GuiadeVenta venta;
-    private String accesorio;
-    private int cantidad;
+    private String accesorio;//codigo de producto
+    private int cantidad; 
 
     public GuiaVentaporProducto(GuiadeVenta venta, String accesorio, int cantidad) {
         //setId();
