@@ -70,7 +70,7 @@ public class Accesorio {
     
        public boolean consultar() {
         Conexion conexion = new Conexion();
-        String SQL = "select * from producto where idproducto='"+this.id+"'";
+        String SQL = "select * from producto where codigo='"+this.codigo+"'";
         ResultSet resultado = conexion.consultar(SQL);
         try {
             if (resultado.next()){ 
@@ -96,12 +96,12 @@ public class Accesorio {
         try{
             ResultSet resultado = conexion.consultar(SQL);
             if(resultado.next()){
-                data[0]=resultado.getString(1);//id
+                //data[0]=resultado.getString(1);//id
+                data[0]=resultado.getString(1);//codigo
                 data[1]=resultado.getString(2);//nombre
-                data[2]=resultado.getString(3);//codigo
-                data[3]=resultado.getString(4);//cantidad
-                data[4]=resultado.getString(5);//precio_unitario
-                data[5]=resultado.getString(6);//descripcion
+                data[2]=resultado.getString(3);//cantidad
+                data[3]=resultado.getString(4);//precio_unitario
+                data[4]=resultado.getString(5);//descripcion
                 
             }else{
                 JOptionPane.showMessageDialog(null, "Este producto no existe");

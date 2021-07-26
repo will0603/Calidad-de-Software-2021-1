@@ -90,11 +90,11 @@ public class GuiaVentaporProducto {
             int i=0;
             while(resultado.next()){
                 datos[i][0]= resultado.getString("producto_codigo");
-                Accesorio producto = new Accesorio(resultado.getInt("producto_codigo"));
+                Accesorio producto = new Accesorio(resultado.getString("producto_codigo"));
                 System.out.println(producto.consultar());
                 datos[i][1]= producto.getNombre();
                 datos[i][2]= String.valueOf(producto.getPrecio());
-                datos[i][3]= String.valueOf(producto.getCantidad());
+                datos[i][3]= resultado.getString("cantidad");
                 datos[i][4]= String.valueOf(producto.getDescripcion());
                 i++;
             }

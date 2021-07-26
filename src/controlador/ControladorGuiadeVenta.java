@@ -96,14 +96,14 @@ public class ControladorGuiadeVenta {
                 if(validarCodigo()){
                     
                     try {
-                        String[] datos = new String[6]; 
+                        String[] datos = new String[5]; 
                         acce.setDatos(datos);
-                        int vacio = Integer.parseInt(datos[3]);
+                        int vacio = Integer.parseInt(datos[2]);
                         if(vacio != 0){
                         vista.txtNombreProducto.setText(datos[1]);
-                        vista.txtCodigo.setText(datos[2]);
-                        vista.txtCantidad.setText(datos[3]);
-                        vista.txtDescripcion.setText(datos[5]);}
+                        vista.txtCodigo.setText(datos[0]);
+                        vista.txtCantidad.setText(datos[2]);
+                        vista.txtDescripcion.setText(datos[4]);}
                         else{
                             JOptionPane.showMessageDialog(vista, "Producto no disponible");
                         }
@@ -179,12 +179,12 @@ public class ControladorGuiadeVenta {
                         String[] datosProducto = new String[6];
                         String[] datosTabla = new String[6];
                         acce.setDatos(datosProducto);
-                        datosTabla[0] = datosProducto[2];
+                        datosTabla[0] = datosProducto[0];
                         datosTabla[1] = datosProducto[1];
-                        datosTabla[2] = datosProducto[5];
-                        datosTabla[4] = datosProducto[4];
-                        datosTabla[3] = vista.txtCantidad.getText();
-                        datosTabla[5] = Float.toString(subtotal(datosTabla[4], datosTabla[3]));
+                        datosTabla[2] = datosProducto[4];
+                        datosTabla[4] = datosProducto[3];
+                        datosTabla[3] = vista.txtCantidad.getText(); // cantidad
+                        datosTabla[5] = Float.toString(subtotal(datosTabla[4], datosTabla[3])); //total
                         //acumularTotal(datosTabla[5]);
                         
                         //vista.txtTotal.setText(datosTabla[5]);

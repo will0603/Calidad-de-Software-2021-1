@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package modelo;
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -40,7 +41,7 @@ public class Conexion {
         this.jdbc = "com.mysql.jdbc.Driver";
         this.ruta = "jdbc:mysql://localhost/bbdddevcell";
         this.usuario ="root";
-        this.contra ="77710875";
+        this.contra ="";
     }
     
     /*El método abrirConexión permite que el atributo connection cree
@@ -90,4 +91,30 @@ casos de excepción*/
         }
         return resultado;
     }
+    /*
+    public CallableStatement llamar(String sentencia){
+        ResultSet resultado=null;
+        try{
+            this.abrirConexion();
+            resultado = statement.executeQuery(sentencia);
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+        
+        return (CallableStatement) resultado;
+    }*/
+    
+   public Connection conectarMySQL(){
+       Connection conn = null;
+       try{
+           Class.forName(jdbc);
+           conn = DriverManager.getConnection(ruta, usuario, contra);
+       }catch(ClassNotFoundException | SQLException e){
+           
+           e.printStackTrace();
+       }
+       
+       
+       return conn;
+   }
 }

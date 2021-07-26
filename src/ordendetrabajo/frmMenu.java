@@ -5,11 +5,13 @@
  */
 package ordendetrabajo;
 
+import controlador.ControladorBuscarServicio;
 import controlador.ControladorGuiadeServicio;
 import controlador.ControladorGuiadeVenta;
 import controlador.ControladorLoginInicio;
 import general.Sistema;
 import javax.swing.UIManager;
+import vista.frmBuscarGuiaServicio;
 import vista.frmBuscarGuiaVentas;
 import vista.frmGuiadeServicio;
 import vista.frmIniciar;
@@ -48,6 +50,7 @@ public class frmMenu extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
+        jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -142,8 +145,17 @@ public class frmMenu extends javax.swing.JFrame {
             }
         });
 
+        jMenuItem6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ordendetrabajo/icons8-acercar-24.png"))); // NOI18N
+        jMenuItem6.setText("Guia de Servicio");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jMenuItem6);
+
         jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ordendetrabajo/icons8-acercar-24.png"))); // NOI18N
-        jMenuItem5.setText("Buscar");
+        jMenuItem5.setText("Guia de Venta");
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem5ActionPerformed(evt);
@@ -221,6 +233,14 @@ public class frmMenu extends javax.swing.JFrame {
         controlador.iniciar();
     }//GEN-LAST:event_formWindowClosing
 
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        frmBuscarGuiaServicio buscar = new frmBuscarGuiaServicio();
+        ControladorBuscarServicio control = new ControladorBuscarServicio(buscar);
+        control.iniciar();
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -270,6 +290,7 @@ public class frmMenu extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

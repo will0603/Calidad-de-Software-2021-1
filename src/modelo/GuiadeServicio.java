@@ -7,6 +7,8 @@ package modelo;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 /**
  *
@@ -18,6 +20,8 @@ public class GuiadeServicio {
     private String descripcionAdicional;
     private Celular celular;
     private Cliente cliente;
+    //private String fecha;
+    
 
     public GuiadeServicio(float total, String descripcionAdicional, Celular celular, Cliente cliente) {
         setId();
@@ -25,6 +29,7 @@ public class GuiadeServicio {
         this.descripcionAdicional = descripcionAdicional;
         this.celular = celular;
         this.cliente = cliente;
+        //this.fecha = fecha;
     }
     
 
@@ -61,13 +66,14 @@ public class GuiadeServicio {
     }
     
     public String insertar(){
+        
         Conexion conexion = new Conexion();
         String SQL = "insert into guiaservicio (idguiaServicio,total,descripAdicional,Cliente_idCliente,Celular_idCelular) values ('"+this.id+"','"+this.total+"','"+this.descripcionAdicional+"','"+this.cliente.getId()+"','"+this.celular.getId()+"')";
         return conexion.ejecutar(SQL);
     }
     
     
-
+    
     @Override
     public String toString() {
         return "GuiadeServicio{" + "id=" + id + ", total=" + total + ", descripcionAdicional=" + descripcionAdicional + ", celular=" + celular + ", cliente=" + cliente + '}';

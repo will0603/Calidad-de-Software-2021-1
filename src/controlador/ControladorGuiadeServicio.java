@@ -10,6 +10,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import javax.swing.JOptionPane;
 import modelo.Celular;
 import modelo.Cliente;
@@ -53,6 +55,8 @@ public class ControladorGuiadeServicio {
                     frmMenu frmmenu = new frmMenu();
                     frmmenu.setLocationRelativeTo(null);
                     frmmenu.setVisible(true);
+                    
+                    //JOptionPane.showMessageDialog(frmmenu, "La guia de servicio se registro, 100% ectivo.");
                 }else{
                     JOptionPane.showMessageDialog(vista, "Debe ingresar valores en todos los campos" , "Error" , JOptionPane.WARNING_MESSAGE );
                 }
@@ -66,7 +70,7 @@ public class ControladorGuiadeServicio {
                     GuiadeServicio guia = new GuiadeServicio(Float.parseFloat(vista.txttotal.getText()), vista.txadescripcion.getText(), 
                             new Celular(vista.jComboBoxmarca.getSelectedItem().toString(), vista.txtmodelo.getText(), vista.txtfalladecelular.getText(), vista.jCheckBoxconCHIP.isSelected(), vista.jCheckBoxconMicroSD.isSelected(), vista.jCheckBoxnoprende.isSelected(), vista.jCheckBoxnoprende.isSelected(), vista.jCheckBoxcaidadeagua.isSelected()), 
                             new Cliente(vista.txtnombre.getText(), vista.txtdni.getText(), vista.txtcelular.getText(), vista.txtcorreo.getText()
-                            ));
+                            ));//,timeStamp);
                     guia.toString();
                 }else{
                     JOptionPane.showMessageDialog(vista, "Debe ingresar valores en todos los campos" , "Error" , JOptionPane.WARNING_MESSAGE );
@@ -77,7 +81,7 @@ public class ControladorGuiadeServicio {
         vista.addWindowListener(new WindowListener() {
             @Override
             public void windowOpened(WindowEvent e) {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
 
             @Override
@@ -94,12 +98,12 @@ public class ControladorGuiadeServicio {
 
             @Override
             public void windowClosed(WindowEvent e) {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
 
             @Override
             public void windowIconified(WindowEvent e) {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
 
             @Override
@@ -109,12 +113,12 @@ public class ControladorGuiadeServicio {
 
             @Override
             public void windowActivated(WindowEvent e) {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
 
             @Override
             public void windowDeactivated(WindowEvent e) {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
         });
     }
