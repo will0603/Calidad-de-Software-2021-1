@@ -42,6 +42,10 @@ public class Celular {
         this.garantía = garantía;
     }
     
+    public Celular(String marca, String modelo, String falla, String Chip, String MicroSd, String CaidadeAgua){
+        
+    }
+    
     public String insertar(){
         Conexion conexion = new Conexion();
         String SQL = "insert into celular (idcelular,marca,modelo,falla,conChip,conMicroSD,noPrende,caidaAgua,garantia) values ('"+this.id+"','"+this.marca+"','"+this.modelo+"','"+this.falla+"',"+this.conChip+","+

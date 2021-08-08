@@ -31,7 +31,14 @@ public class GuiadeServicio {
         this.cliente = cliente;
         //this.fecha = fecha;
     }
-    
+    public GuiadeServicio(float total, String descripcionAdicional, Cliente cliente) {
+        setId();
+        this.total = total;
+        this.descripcionAdicional = descripcionAdicional;
+        //this.celular = celular;
+        this.cliente = cliente;
+        //this.fecha = fecha;
+    }
 
     /*public GuiadeServicio(String nombre, String dni, String numeroDeCelular, String correo, Celular celular, float saldo, float aCuenta, float total, String descripcionAdicional) {
         setId();

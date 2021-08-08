@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
  * @author LENOVO
  */
 public class Accesorio {
-    private int id;
+    //private int id;
     private String codigo;
     private String nombre;
     private int cantidad;
@@ -23,22 +23,22 @@ public class Accesorio {
     private float precio;
 
     public Accesorio(String codigo, String nombre, int cantidad, String descripcion, float precio) {
-        setId();
+        //setId();
         this.codigo = codigo;
         this.nombre = nombre;
         this.cantidad = cantidad;
         this.descripcion = descripcion;
         this.precio = precio;
         
-    }
+    }/*
     public Accesorio(int id) {
         this.id = id;
-    }
+    }*/
 
     public Accesorio(String codigo) {
         this.codigo = codigo;
     }
-    
+    /*
     public void setId() {
         Conexion conexion = new Conexion();
         String SQL = "select MAX(idproducto) as idProducto FROM producto";
@@ -60,13 +60,20 @@ public class Accesorio {
     public int getId() {
         return id;
     }
-    
+    */
+    public String insertar(){
+        Conexion conexion = new Conexion();
+        String SQL = "insert into producto (codigo,nombre,cantidad,precio_unitario,descripcion) values ('"+this.codigo+"','"+this.nombre+"','"+this.cantidad+"',"+this.precio+","+
+                                                                                    this.descripcion+")";
+        return conexion.ejecutar(SQL);
+    }
+    /*
     public String insertar(){
         Conexion conexion = new Conexion();
         String SQL = "insert into producto (idproducto,nombre,codigo,cantidad,precio_unitario,descripcion) values ('"+this.id+"','"+this.nombre+"','"+this.codigo+"','"+this.cantidad+"',"+this.precio+","+
                                                                                     this.descripcion+")";
         return conexion.ejecutar(SQL);
-    }
+    }*/
     
        public boolean consultar() {
         Conexion conexion = new Conexion();

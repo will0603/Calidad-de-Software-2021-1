@@ -247,7 +247,7 @@ public class ControladorGuiadeVenta {
                 + "<p>IGV </p>"
                 + "<p style='margin-left:200px;'>"+venta.getIgv()+"</p>"
                 + "</div>"
-                + "<p style='text-align:left;padding-left:20px;'>3 meses</p>"
+                + "<p style='text-align:left;padding-left:20px;'></p>"  //3 meses
                 + "</div>"
                 + "<div style='display:flex;border: 1px solid black;padding-left:20px'>"
                 + "<p>Total</p>"
@@ -269,7 +269,7 @@ public class ControladorGuiadeVenta {
                 + "<p style='font-size: 10px;'>Direccion y contacto</p>"
                 + "</div>";
 
-                Email email =  new Email(Sistema.usuario.getEmail(), "Nota de Venta", mensaje);
+                Email email =  new Email(vista.txtCorreo.getText(), "Nota de Venta", mensaje);
 
                 Thread enviar = new Thread(email);
                 enviar.start();

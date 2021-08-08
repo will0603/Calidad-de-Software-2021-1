@@ -90,7 +90,7 @@ public class GuiaVentaporProducto {
             int i=0;
             while(resultado.next()){
                 datos[i][0]= resultado.getString("producto_codigo");
-                Accesorio producto = new Accesorio(resultado.getString("producto_codigo"));
+                Accesorio producto = new Accesorio(datos[i][0]);
                 System.out.println(producto.consultar());
                 datos[i][1]= producto.getNombre();
                 datos[i][2]= String.valueOf(producto.getPrecio());

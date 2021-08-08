@@ -80,6 +80,7 @@ public class frmBuscarGuiaServicio extends javax.swing.JFrame {
         jLabel27.setText("jLabel27");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
 

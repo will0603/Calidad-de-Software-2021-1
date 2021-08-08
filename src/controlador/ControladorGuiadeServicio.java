@@ -33,9 +33,9 @@ public class ControladorGuiadeServicio {
             @Override
             public void actionPerformed(ActionEvent ae) {
                 vista.dispose();
-                frmMenu vista1 = new frmMenu();
-                vista1.setLocationRelativeTo(null);
-                vista1.setVisible(true);
+                //frmMenu vista1 = new frmMenu();
+                //vista1.setLocationRelativeTo(null);
+                //vista1.setVisible(true);
             }
         });
         

@@ -79,6 +79,7 @@ public class frmBuscarGuiaVentas extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -346,7 +347,7 @@ public class frmBuscarGuiaVentas extends javax.swing.JFrame {
                 + "<p>IGV </p>"
                 + "<p style='margin-left:200px;'>"+venta.getIgv()+"</p>"
                 + "</div>"
-                + "<p style='text-align:left;padding-left:20px;'>3 meses</p>"
+                + "<p style='text-align:left;padding-left:20px;'></p>"
                 + "</div>"
                 + "<div style='display:flex;border: 1px solid black;padding-left:20px'>"
                 + "<p>Total</p>"
@@ -382,7 +383,7 @@ public class frmBuscarGuiaVentas extends javax.swing.JFrame {
         if(txtNroGuia.getText().length()!=0){
             GuiadeVenta venta = new GuiadeVenta(Integer.parseInt(txtNroGuia.getText()));
             System.out.println(venta.consultar());
-            if(venta!=null){
+            if(venta.getCliente() != null){
                 lblCelular.setText(venta.getCliente().getNumeroDeCelular());
                 lblCliente.setText(venta.getCliente().getNombre());
                 lblDni.setText(venta.getCliente().getDni());
