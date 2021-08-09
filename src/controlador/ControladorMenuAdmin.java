@@ -8,7 +8,9 @@ package controlador;
 import general.Sistema;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Arrays;
 import javax.swing.Action;
+import modelo.GuiadeServicio;
 import vista.frmAñadirProducto;
 import vista.frmEditarGuiaVenta;
 import vista.frmEditarGuiadeServicio;
@@ -16,6 +18,7 @@ import vista.frmEditarProducto;
 import vista.frmIniciar;
 import vista.frmMantenimientoUsuario;
 import vista.frmMenuAdmin;
+import vista.frmReportEstadoRecepcion;
 
 /**
  *
@@ -87,6 +90,18 @@ public class ControladorMenuAdmin {
                 ControladorEditarGuiaVenta controlador = new ControladorEditarGuiaVenta(gv);
                 controlador.iniciar();
             
+            }
+        });
+        
+        vista.menuEstadosRecepcion.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                GuiadeServicio guia = new GuiadeServicio();
+                int[] datos = guia.getDatosPie2D();
+                System.out.println(Arrays.toString(datos));
+                frmReportEstadoRecepcion torta = new frmReportEstadoRecepcion(datos);
+                torta.setVisible(true);
+                torta.setLocationRelativeTo(null);
             }
         });
     }

@@ -10,6 +10,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Calendar;
 import javax.swing.JOptionPane;
 
@@ -55,6 +56,38 @@ public class GuiadeServicio {
         this.id=id;
     }
 
+    public GuiadeServicio() {
+    }
+
+    public int[] getDatosPie2D(){
+        Conexion con = new Conexion();
+        String SQL = "select * from guiaservicio";   //Buscar nick's que empiezen con "filtro"
+        ResultSet resultado=con.consultar(SQL);
+        int[] datos = new int[5];
+        Arrays.fill(datos, 0);
+        try{
+            while(resultado.next()){
+                int i = resultado.getInt("Celular_idCelular");
+                Celular celular = new Celular(i);
+                celular.consultar();
+                if(celular.isConChip()){
+                    datos[0]++;
+                }if(celular.isConMicroSD()){
+                    datos[1]++;
+                }if(celular.isNoPrende()){
+                    datos[2]++;
+                }if(celular.isCaidaDeAgua()){
+                    datos[3]++;
+                }if(celular.isGarantía()){
+                    datos[4]++;
+                }
+            }
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+        return datos;
+    }
+    
     /*public GuiadeServicio(String nombre, String dni, String numeroDeCelular, String correo, Celular celular, float saldo, float aCuenta, float total, String descripcionAdicional) {
         setId();
         this.nombre = nombre;

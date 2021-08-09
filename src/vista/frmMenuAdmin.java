@@ -47,6 +47,8 @@ public class frmMenuAdmin extends javax.swing.JFrame {
         menuGS = new javax.swing.JMenuItem();
         menuGV = new javax.swing.JMenuItem();
         menuPro = new javax.swing.JMenuItem();
+        menuArchivo1 = new javax.swing.JMenu();
+        menuEstadosRecepcion = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -136,6 +138,20 @@ public class frmMenuAdmin extends javax.swing.JFrame {
 
         jMenuBar1.add(menuEditar);
 
+        menuArchivo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ordendetrabajo/folder.png"))); // NOI18N
+        menuArchivo1.setText("Reporte");
+        menuArchivo1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuArchivo1ActionPerformed(evt);
+            }
+        });
+
+        menuEstadosRecepcion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ordendetrabajo/exit.png"))); // NOI18N
+        menuEstadosRecepcion.setText("Estados de Recepcion");
+        menuArchivo1.add(menuEstadosRecepcion);
+
+        jMenuBar1.add(menuArchivo1);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -180,6 +196,10 @@ public class frmMenuAdmin extends javax.swing.JFrame {
         //controlador.iniciar();
     }//GEN-LAST:event_menuProActionPerformed
 
+    private void menuArchivo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuArchivo1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_menuArchivo1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -221,9 +241,11 @@ public class frmMenuAdmin extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     public javax.swing.JMenuItem menuAddUser;
     public javax.swing.JMenu menuArchivo;
+    public javax.swing.JMenu menuArchivo1;
     public javax.swing.JMenu menuAñadir;
     public javax.swing.JMenu menuCrear;
     public javax.swing.JMenu menuEditar;
+    public javax.swing.JMenuItem menuEstadosRecepcion;
     public javax.swing.JMenuItem menuGS;
     public javax.swing.JMenuItem menuGV;
     public javax.swing.JMenuItem menuPro;
