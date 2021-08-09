@@ -5,10 +5,13 @@
  */
 package modelo;
 
+import java.sql.CallableStatement;
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -38,6 +41,10 @@ public class GuiadeServicio {
         //this.celular = celular;
         this.cliente = cliente;
         //this.fecha = fecha;
+    }
+    
+    public GuiadeServicio(int id){
+        this.id=id;
     }
 
     /*public GuiadeServicio(String nombre, String dni, String numeroDeCelular, String correo, Celular celular, float saldo, float aCuenta, float total, String descripcionAdicional) {
@@ -86,7 +93,47 @@ public class GuiadeServicio {
         return "GuiadeServicio{" + "id=" + id + ", total=" + total + ", descripcionAdicional=" + descripcionAdicional + ", celular=" + celular + ", cliente=" + cliente + '}';
     }
     
+    public void getGuiadeServicio(){
+        Conexion conectar = new Conexion();
+        //String[] datosguia = new String[13];
+        String SQL = "{call get_guiaservicio_by_id(?)}";
+        CallableStatement stmt = null;
+        try(Connection conn = conectar.conectarMySQL() ){
+            //System.out.println("Creando sentencia...");
+            stmt = conn.prepareCall(SQL);
+            stmt.setInt(1,this.id);
+            ResultSet rs = stmt.executeQuery();
+            //stmt.execute();
+            
+            if(rs.next()){
+                //datosguia[0] = String.valueOf(rs.getInt("guiaservicio.idguiaServicio"));
+                this.total = rs.getFloat("guiaservicio.total");
+                this.descripcionAdicional = rs.getString("guiaservicio.descripAdicional");
+                //datosguia[3] = rs.getString("cliente.nombre");
+                //datosguia[4] = String.valueOf(rs.getInt("cliente.dni"));
+                //datosguia[5] = String.valueOf(rs.getInt("cliente.nroCelular"));
+                //datosguia[6] = rs.getString("cliente.correo");
+                //datosguia[7] = rs.getString("celular.marca");
+                //datosguia[8] = rs.getString("celular.modelo");
+                //datosguia[9] = rs.getString("celular.falla");
+                /*
+            if(rs.getInt("celular.conChip") == 1){datosguia[10] = "Si";}
+            else{ datosguia[10] = "No";  }
+            if(rs.getInt("celular.conMicroSD") == 1){datosguia[11] = "Si";}
+            else{ datosguia[11] = "No";  }
+            if(rs.getInt("celular.caidaAgua") == 1){datosguia[12] = "Si";}
+            else{ datosguia[12] = "No";  }*/
+            //datosguia[11] = String.valueOf(rs.getInt("celular.conMicroSD"));
+            //datosguia[12] = String.valueOf(rs.getInt("celular.caidaAgua"));
+        } else{
+                JOptionPane.showMessageDialog(null, "El numero de guia de servicio no existe");
+            }//stmt.close();
+        }catch(Exception e){
+            System.out.println(e);
+        }
     
+    
+    }
     
     
 }

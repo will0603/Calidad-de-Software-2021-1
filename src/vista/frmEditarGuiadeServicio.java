@@ -56,9 +56,9 @@ public class frmEditarGuiadeServicio extends javax.swing.JFrame {
         txadescripcion = new javax.swing.JTextArea();
         jLabel10 = new javax.swing.JLabel();
         txttotal = new javax.swing.JTextField();
-        btnmostrar = new javax.swing.JButton();
+        btnBuscar = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtNumeroGuia = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -144,7 +144,7 @@ public class frmEditarGuiadeServicio extends javax.swing.JFrame {
 
         txttotal.setText(" ");
 
-        btnmostrar.setText("Buscar");
+        btnBuscar.setText("Buscar");
 
         jLabel11.setText("Numero:");
 
@@ -193,7 +193,7 @@ public class frmEditarGuiadeServicio extends javax.swing.JFrame {
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(txtdni)
                                         .addComponent(txtcorreo, javax.swing.GroupLayout.DEFAULT_SIZE, 207, Short.MAX_VALUE))
-                                    .addComponent(btnmostrar)))
+                                    .addComponent(btnBuscar)))
                             .addComponent(jLabel2)
                             .addComponent(jLabel9)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -210,9 +210,9 @@ public class frmEditarGuiadeServicio extends javax.swing.JFrame {
                         .addComponent(txttotal, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel11)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField1)
-                        .addGap(289, 289, 289)))
+                        .addGap(12, 12, 12)
+                        .addComponent(txtNumeroGuia, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(292, 292, 292)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -222,9 +222,9 @@ public class frmEditarGuiadeServicio extends javax.swing.JFrame {
                 .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnmostrar)
+                    .addComponent(btnBuscar)
                     .addComponent(jLabel11)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNumeroGuia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(19, 19, 19)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel1)
@@ -381,7 +381,7 @@ public class frmEditarGuiadeServicio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btnmostrar;
+    public javax.swing.JButton btnBuscar;
     public javax.swing.JButton btnregistrar;
     public javax.swing.JButton btnvolver;
     public javax.swing.JCheckBox jCheckBoxcaidadeagua;
@@ -403,9 +403,9 @@ public class frmEditarGuiadeServicio extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     public javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
     private java.awt.Label label1;
     public javax.swing.JTextArea txadescripcion;
+    public javax.swing.JTextField txtNumeroGuia;
     public javax.swing.JTextField txtcelular;
     public javax.swing.JTextField txtcorreo;
     public javax.swing.JTextField txtdni;

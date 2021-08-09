@@ -6,6 +6,8 @@
 package modelo;
 
 import excepciones.InvalidNombreException;
+import java.sql.CallableStatement;
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
@@ -63,8 +65,8 @@ public class Accesorio {
     */
     public String insertar(){
         Conexion conexion = new Conexion();
-        String SQL = "insert into producto (codigo,nombre,cantidad,precio_unitario,descripcion) values ('"+this.codigo+"','"+this.nombre+"','"+this.cantidad+"',"+this.precio+","+
-                                                                                    this.descripcion+")";
+        String SQL = "insert into producto (codigo,nombre,cantidad,precio_unitario,descripcion) values ('"+this.codigo+"','"+this.nombre+"','"+this.cantidad+"','"+this.precio+"','"+
+                                                                                    this.descripcion+"')";
         return conexion.ejecutar(SQL);
     }
     /*
@@ -120,7 +122,56 @@ public class Accesorio {
         }
         return data;
     }
-
+    
+    public String[] getProdcuto(String[] data, String codigo){
+        Conexion conectar = new Conexion();
+        String SQL = "{call get_producto_by_codigo(?)}";
+        CallableStatement stmt = null;
+        
+        try(Connection conn = conectar.conectarMySQL() ){
+            //System.out.println("Creando sentencia...");
+            stmt = conn.prepareCall(SQL);
+            stmt.setString(1,codigo);
+            ResultSet rs = stmt.executeQuery();
+            //stmt.execute();
+            
+            if(rs.next()){
+            data[0] = rs.getString("codigo");
+            data[1] = rs.getString("nombre");
+            data[2] = String.valueOf(rs.getInt("cantidad"));
+            data[3] = String.valueOf(rs.getFloat("precio_unitario"));
+            data[4] = rs.getString("descripcion");
+            
+            } else{
+                JOptionPane.showMessageDialog(null, "El producto no existe");
+            }//stmt.close();
+            
+        }catch(Exception e){
+            System.out.println(e);
+        }
+        return data;
+    }
+    
+    public void insert2(){
+        Conexion conectar = new Conexion();
+        String SQL = "{call insert_producto(?,?,?,?,?)}";
+        CallableStatement stmt = null;
+        
+        try(Connection conn = conectar.conectarMySQL()){
+            stmt = conn.prepareCall(SQL);
+            stmt.setString(1,this.codigo);
+            stmt.setString(2,this.nombre);
+            stmt.setInt(3,this.cantidad);
+            stmt.setFloat(4,this.precio);
+            stmt.setString(5,this.descripcion);
+            stmt.executeUpdate();
+            
+        } catch (Exception e){
+            System.out.println(e);
+            JOptionPane.showMessageDialog(null, "ocurrió un problema con la Base de Datos");
+        }
+    }
+    
     public String getCodigo() {
         return codigo;
     }

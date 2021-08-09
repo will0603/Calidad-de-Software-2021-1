@@ -186,7 +186,7 @@ public class ControladorBuscarServicio {
             //datosguia[11] = String.valueOf(rs.getInt("celular.conMicroSD"));
             //datosguia[12] = String.valueOf(rs.getInt("celular.caidaAgua"));
         } else{
-                JOptionPane.showMessageDialog(vista, "El numero de guia de servicio no exisite");
+                JOptionPane.showMessageDialog(vista, "El numero de guia de servicio no existe");
             }//stmt.close();
             
         }catch(Exception e){
