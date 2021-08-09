@@ -42,6 +42,17 @@ public class Celular {
         this.garantía = garantía;
     }
     
+    public Celular(String marca, String modelo, String falla, boolean conChip, boolean conMicroSD, boolean caidaDeAgua) {
+        setId();
+        this.marca = marca;
+        this.modelo = modelo;
+        this.falla = falla;
+        this.conChip = conChip;
+        this.conMicroSD = conMicroSD;
+        this.caidaDeAgua = caidaDeAgua;
+        
+    }
+    
     public Celular(String marca, String modelo, String falla, String Chip, String MicroSd, String CaidadeAgua){
         
     }
@@ -73,6 +84,38 @@ public class Celular {
 
     public int getId() {
         return id;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public String getFalla() {
+        return falla;
+    }
+
+    public boolean isConChip() {
+        return conChip;
+    }
+
+    public boolean isConMicroSD() {
+        return conMicroSD;
+    }
+
+    public boolean isNoPrende() {
+        return noPrende;
+    }
+
+    public boolean isCaidaDeAgua() {
+        return caidaDeAgua;
+    }
+
+    public boolean isGarantía() {
+        return garantía;
     }
     
     

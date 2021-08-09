@@ -24,6 +24,14 @@ public class GuiadeServicio {
     private Celular celular;
     private Cliente cliente;
     //private String fecha;
+
+    public float getTotal() {
+        return total;
+    }
+
+    public String getDescripcionAdicional() {
+        return descripcionAdicional;
+    }
     
 
     public GuiadeServicio(float total, String descripcionAdicional, Celular celular, Cliente cliente) {
@@ -93,47 +101,63 @@ public class GuiadeServicio {
         return "GuiadeServicio{" + "id=" + id + ", total=" + total + ", descripcionAdicional=" + descripcionAdicional + ", celular=" + celular + ", cliente=" + cliente + '}';
     }
     
-    public void getGuiadeServicio(){
+    public void BuscarGuiadeServicio(){
         Conexion conectar = new Conexion();
-        //String[] datosguia = new String[13];
+        
         String SQL = "{call get_guiaservicio_by_id(?)}";
         CallableStatement stmt = null;
         try(Connection conn = conectar.conectarMySQL() ){
-            //System.out.println("Creando sentencia...");
+            
             stmt = conn.prepareCall(SQL);
             stmt.setInt(1,this.id);
             ResultSet rs = stmt.executeQuery();
-            //stmt.execute();
             
             if(rs.next()){
-                //datosguia[0] = String.valueOf(rs.getInt("guiaservicio.idguiaServicio"));
                 this.total = rs.getFloat("guiaservicio.total");
                 this.descripcionAdicional = rs.getString("guiaservicio.descripAdicional");
-                //datosguia[3] = rs.getString("cliente.nombre");
-                //datosguia[4] = String.valueOf(rs.getInt("cliente.dni"));
-                //datosguia[5] = String.valueOf(rs.getInt("cliente.nroCelular"));
-                //datosguia[6] = rs.getString("cliente.correo");
-                //datosguia[7] = rs.getString("celular.marca");
-                //datosguia[8] = rs.getString("celular.modelo");
-                //datosguia[9] = rs.getString("celular.falla");
-                /*
-            if(rs.getInt("celular.conChip") == 1){datosguia[10] = "Si";}
-            else{ datosguia[10] = "No";  }
-            if(rs.getInt("celular.conMicroSD") == 1){datosguia[11] = "Si";}
-            else{ datosguia[11] = "No";  }
-            if(rs.getInt("celular.caidaAgua") == 1){datosguia[12] = "Si";}
-            else{ datosguia[12] = "No";  }*/
-            //datosguia[11] = String.valueOf(rs.getInt("celular.conMicroSD"));
-            //datosguia[12] = String.valueOf(rs.getInt("celular.caidaAgua"));
-        } else{
+            } else{
                 JOptionPane.showMessageDialog(null, "El numero de guia de servicio no existe");
             }//stmt.close();
         }catch(Exception e){
             System.out.println(e);
         }
-    
-    
     }
     
+    public Cliente BuscarGServicio(){
+        Conexion conectar = new Conexion();
+        Cliente client = null;
+        String SQL = "{call get_guiaservicio_by_id(?)}";
+        CallableStatement stmt = null;
+        try(Connection conn = conectar.conectarMySQL() ){
+            stmt = conn.prepareCall(SQL);
+            stmt.setInt(1,this.id);
+            ResultSet rs = stmt.executeQuery();
+            if(rs.next()){
+            client = new Cliente(rs.getString("cliente.nombre"), rs.getString("cliente.dni"), rs.getString("cliente.nrocelular"),rs.getString("cliente.correo"));
+            } 
+        }catch(Exception e){
+            System.out.println(e);
+        }
+        return client;
+    }
+    
+    public Celular BuscarGServicioC(){
+        Conexion conectar = new Conexion();
+        Celular cell = null;
+        String SQL = "{call get_guiaservicio_by_id(?)}";
+        CallableStatement stmt = null;
+        try(Connection conn = conectar.conectarMySQL() ){
+            stmt = conn.prepareCall(SQL);
+            stmt.setInt(1,this.id);
+            ResultSet rs = stmt.executeQuery();
+            if(rs.next()){
+            cell = new Celular(rs.getString("celular.marca"), rs.getString("celular.modelo"), rs.getString("celular.falla"), 
+                        rs.getBoolean("celular.conChip"), rs.getBoolean("celular.conMicroSD"), rs.getBoolean("celular.caidaAgua"));
+            } 
+        }catch(Exception e){
+            System.out.println(e);
+        }
+        return cell;
+    }
     
 }
