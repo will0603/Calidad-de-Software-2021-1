@@ -41,7 +41,7 @@ public class Conexion {
         this.jdbc = "com.mysql.jdbc.Driver";
         this.ruta = "jdbc:mysql://localhost/bbdddevcell";
         this.usuario ="root";
-        this.contra ="";
+        this.contra ="77710875";
     }
     
     /*El método abrirConexión permite que el atributo connection cree

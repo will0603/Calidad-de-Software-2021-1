@@ -45,12 +45,40 @@ public class Celular {
     public Celular(String marca, String modelo, String falla, String Chip, String MicroSd, String CaidadeAgua){
         
     }
+
+    public Celular(int id) {
+        this.id = id;
+    }
     
     public String insertar(){
         Conexion conexion = new Conexion();
         String SQL = "insert into celular (idcelular,marca,modelo,falla,conChip,conMicroSD,noPrende,caidaAgua,garantia) values ('"+this.id+"','"+this.marca+"','"+this.modelo+"','"+this.falla+"',"+this.conChip+","+
                                                                                     this.conMicroSD+","+this.noPrende+","+this.caidaDeAgua+","+this.garantía+")";
         return conexion.ejecutar(SQL);
+    }
+    
+     public boolean consultar() {
+        Conexion conexion = new Conexion();
+        String SQL = "select * from celular where idcelular='"+this.id+"'";
+        ResultSet resultado = conexion.consultar(SQL);
+        try {
+            if (resultado.next()){ 
+            this.marca = resultado.getString("marca");
+            this.modelo = resultado.getString("modelo");
+            this.falla = resultado.getString("falla");
+            this.conChip = resultado.getBoolean("conChip");
+            this.conMicroSD = resultado.getBoolean("conMicroSD");
+            this.noPrende = resultado.getBoolean("noPrende");
+            this.caidaDeAgua = resultado.getBoolean("caidaAgua");
+            this.garantía = resultado.getBoolean("garantia");
+            return true;
+            }else{
+                return false;
+            }
+        }catch(SQLException e){
+            e.printStackTrace();
+            return false;
+        }
     }
     
     public void setId() {
@@ -73,6 +101,38 @@ public class Celular {
 
     public int getId() {
         return id;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public String getFalla() {
+        return falla;
+    }
+
+    public boolean isConChip() {
+        return conChip;
+    }
+
+    public boolean isConMicroSD() {
+        return conMicroSD;
+    }
+
+    public boolean isNoPrende() {
+        return noPrende;
+    }
+
+    public boolean isCaidaDeAgua() {
+        return caidaDeAgua;
+    }
+
+    public boolean isGarantía() {
+        return garantía;
     }
     
     
