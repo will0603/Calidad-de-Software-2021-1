@@ -12,6 +12,7 @@ import vista.frmIniciar;
 import vista.frmRegistrar;
 import vista.frmRecordar;
 import utils.Email;
+import vista.frmMenuAdmin;
 import vista.frmPrincipal;
 
 public class ControladorLoginInicio {
@@ -36,7 +37,15 @@ public class ControladorLoginInicio {
                        Thread enviar = new Thread(email);
                        enviar.start();
                        vista.dispose();
-                       new OrdenDeTrabajo().iniciar();
+                       if(Sistema.usuario.getPerfil().equalsIgnoreCase("administrador")){
+                           frmMenuAdmin menuAdmin = new frmMenuAdmin();
+                           //menuAdmin.iniciar();
+                           ControladorMenuAdmin controlador = new ControladorMenuAdmin(menuAdmin);
+                           controlador.iniciar();
+                       }else{
+                           new OrdenDeTrabajo().iniciar();
+                       }
+                       
                        /*
                        frmPrincipal fprincipal = new frmPrincipal();
                        ControladorPrincipal controladorprincipal = new ControladorPrincipal(fprincipal);

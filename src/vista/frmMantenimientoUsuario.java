@@ -225,6 +225,8 @@ public class frmMantenimientoUsuario extends javax.swing.JFrame {
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         if(validar()){
             if(usuario != null){
+                if(txtContraseña.getText().equalsIgnoreCase(txtRepContraseña.getText())){
+                
                 usuario = new Usuario(usuario.getCodigo(), cboPerfil.getSelectedItem().toString(), txtUsuario.getText(), txtContraseña.getText(),txtEmail.getText(), jCheckBox1.isSelected(), usuario.isConectado());
                 
                 System.out.println(usuario.actualizar());
@@ -232,8 +234,12 @@ public class frmMantenimientoUsuario extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this,"Usuario modificado", "Guardar Usuario" , JOptionPane.INFORMATION_MESSAGE );
                 usuario = null;
                 limpiarControles();
-                btnModificar.setEnabled(true);
+                btnModificar.setEnabled(true);}
+                else{
+                    JOptionPane.showMessageDialog(this, "Las contraseñas no son iguales");
+                }
             }else{
+                if(txtContraseña.getText().equalsIgnoreCase(txtRepContraseña.getText())){
                 try{
                 Usuario u = new Usuario(cboPerfil.getSelectedItem().toString(), txtUsuario.getText(), txtContraseña.getText(),txtEmail.getText(), jCheckBox1.isSelected());
                 
@@ -251,6 +257,9 @@ public class frmMantenimientoUsuario extends javax.swing.JFrame {
                  System.out.println(e6);
                  JOptionPane.showMessageDialog(this, "El Nombre de Usuario ingresado, ya existe");
                  }
+                }else{
+                    JOptionPane.showMessageDialog(this, "Las contraseñas no son iguales");
+                }
             }
        }
        else{

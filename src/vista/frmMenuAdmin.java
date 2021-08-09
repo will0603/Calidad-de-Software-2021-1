@@ -5,6 +5,9 @@
  */
 package vista;
 
+import controlador.ControladorAñadirProducto;
+import controlador.ControladorEditarProducto;
+
 /**
  *
  * @author LENOVO
@@ -17,7 +20,11 @@ public class frmMenuAdmin extends javax.swing.JFrame {
     public frmMenuAdmin() {
         initComponents();
     }
-
+    
+    public void iniciar(){
+        this.setVisible(true);
+        this.setLocationRelativeTo(null);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -30,14 +37,16 @@ public class frmMenuAdmin extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        menuSalir = new javax.swing.JMenu();
+        menuArchivo = new javax.swing.JMenu();
+        menuSalir = new javax.swing.JMenuItem();
         menuCrear = new javax.swing.JMenu();
+        menuAddUser = new javax.swing.JMenuItem();
         menuAñadir = new javax.swing.JMenu();
         menuProducto = new javax.swing.JMenuItem();
         menuEditar = new javax.swing.JMenu();
         menuGS = new javax.swing.JMenuItem();
         menuGV = new javax.swing.JMenuItem();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        menuPro = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -63,12 +72,32 @@ public class frmMenuAdmin extends javax.swing.JFrame {
                 .addContainerGap(156, Short.MAX_VALUE))
         );
 
+        menuArchivo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ordendetrabajo/folder.png"))); // NOI18N
+        menuArchivo.setText("Archivo");
+        menuArchivo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuArchivoActionPerformed(evt);
+            }
+        });
+
         menuSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ordendetrabajo/exit.png"))); // NOI18N
         menuSalir.setText("Salir");
-        jMenuBar1.add(menuSalir);
+        menuArchivo.add(menuSalir);
+
+        jMenuBar1.add(menuArchivo);
 
         menuCrear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ordendetrabajo/addemployee.png"))); // NOI18N
         menuCrear.setText("Crear");
+        menuCrear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuCrearActionPerformed(evt);
+            }
+        });
+
+        menuAddUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ordendetrabajo/addemployee.png"))); // NOI18N
+        menuAddUser.setText("Usuario");
+        menuCrear.add(menuAddUser);
+
         jMenuBar1.add(menuCrear);
 
         menuAñadir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ordendetrabajo/job.png"))); // NOI18N
@@ -96,9 +125,14 @@ public class frmMenuAdmin extends javax.swing.JFrame {
         menuGV.setText("Guia de Venta");
         menuEditar.add(menuGV);
 
-        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ordendetrabajo/edit.png"))); // NOI18N
-        jMenuItem1.setText("Productos");
-        menuEditar.add(jMenuItem1);
+        menuPro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ordendetrabajo/edit.png"))); // NOI18N
+        menuPro.setText("Productos");
+        menuPro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuProActionPerformed(evt);
+            }
+        });
+        menuEditar.add(menuPro);
 
         jMenuBar1.add(menuEditar);
 
@@ -120,7 +154,31 @@ public class frmMenuAdmin extends javax.swing.JFrame {
 
     private void menuProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuProductoActionPerformed
         // TODO add your handling code here:
+        //frmAñadirProducto producto = new frmAñadirProducto();
+        //ControladorAñadirProducto controlador = new ControladorAñadirProducto(producto);
+        //controlador.iniciar();        
     }//GEN-LAST:event_menuProductoActionPerformed
+
+    private void menuArchivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuArchivoActionPerformed
+        // TODO add your handling code here:
+        //dispose();
+        //frmIniciar inicio = new frmIniciar();
+        //inicio.setVisible(true);
+        //inicio.setLocationRelativeTo(null);
+    }//GEN-LAST:event_menuArchivoActionPerformed
+
+    private void menuCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCrearActionPerformed
+        // TODO add your handling code here:
+        //frmMantenimientoUsuario crear = new frmMantenimientoUsuario();
+        //crear.iniciar();
+    }//GEN-LAST:event_menuCrearActionPerformed
+
+    private void menuProActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuProActionPerformed
+        // TODO add your handling code here:
+        //frmEditarProducto productoEdi = new frmEditarProducto();
+        //ControladorEditarProducto controlador =  new ControladorEditarProducto(productoEdi);
+        //controlador.iniciar();
+    }//GEN-LAST:event_menuProActionPerformed
 
     /**
      * @param args the command line arguments
@@ -160,14 +218,16 @@ public class frmMenuAdmin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
+    public javax.swing.JMenuItem menuAddUser;
+    public javax.swing.JMenu menuArchivo;
     public javax.swing.JMenu menuAñadir;
     public javax.swing.JMenu menuCrear;
     public javax.swing.JMenu menuEditar;
-    private javax.swing.JMenuItem menuGS;
-    private javax.swing.JMenuItem menuGV;
-    private javax.swing.JMenuItem menuProducto;
-    public javax.swing.JMenu menuSalir;
+    public javax.swing.JMenuItem menuGS;
+    public javax.swing.JMenuItem menuGV;
+    public javax.swing.JMenuItem menuPro;
+    public javax.swing.JMenuItem menuProducto;
+    public javax.swing.JMenuItem menuSalir;
     // End of variables declaration//GEN-END:variables
 }

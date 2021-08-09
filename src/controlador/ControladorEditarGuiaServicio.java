@@ -35,6 +35,19 @@ public class ControladorEditarGuiaServicio {
             
             }
         });
+        
+        vista.btnvolver.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                vista.dispose();
+            
+            }
+        });
+    }
+    public void iniciar(){
+        vista.setVisible(true);
+        vista.setLocationRelativeTo(null);
     }
     
     private boolean validar() {
