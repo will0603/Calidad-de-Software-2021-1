@@ -37,8 +37,6 @@ public class frmIniciar extends javax.swing.JFrame {
         txtContraseña = new javax.swing.JPasswordField();
         panBotones = new javax.swing.JPanel();
         btnSalir = new javax.swing.JButton();
-        btnAbrirRegistro = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
         btnIngresar = new javax.swing.JButton();
         btnAbrirRecordarContraseña = new javax.swing.JButton();
 
@@ -125,7 +123,7 @@ public class frmIniciar extends javax.swing.JFrame {
                 .addGroup(panControlesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         getContentPane().add(panControles, java.awt.BorderLayout.CENTER);
@@ -136,15 +134,6 @@ public class frmIniciar extends javax.swing.JFrame {
         btnSalir.setForeground(new java.awt.Color(204, 204, 204));
         btnSalir.setText("SALIR");
         btnSalir.setContentAreaFilled(false);
-
-        btnAbrirRegistro.setBackground(new java.awt.Color(0, 0, 0));
-        btnAbrirRegistro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnRegistrar.png"))); // NOI18N
-        btnAbrirRegistro.setContentAreaFilled(false);
-        btnAbrirRegistro.setMargin(new java.awt.Insets(0, 0, 0, 0));
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel2.setText("¿No tienes cuenta?");
 
         btnIngresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnInicioSesion.png"))); // NOI18N
         btnIngresar.setContentAreaFilled(false);
@@ -158,19 +147,10 @@ public class frmIniciar extends javax.swing.JFrame {
         panBotones.setLayout(panBotonesLayout);
         panBotonesLayout.setHorizontalGroup(
             panBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panBotonesLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(114, 114, 114))
             .addGroup(panBotonesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panBotonesLayout.createSequentialGroup()
-                        .addComponent(btnIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 422, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(panBotonesLayout.createSequentialGroup()
-                        .addComponent(btnAbrirRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 422, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(18, Short.MAX_VALUE))))
+                .addComponent(btnIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 422, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 18, Short.MAX_VALUE))
             .addGroup(panBotonesLayout.createSequentialGroup()
                 .addGroup(panBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panBotonesLayout.createSequentialGroup()
@@ -186,15 +166,11 @@ public class frmIniciar extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panBotonesLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(btnIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnAbrirRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(32, 32, 32)
                 .addComponent(btnSalir)
                 .addGap(18, 18, 18)
                 .addComponent(btnAbrirRecordarContraseña)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         getContentPane().add(panBotones, java.awt.BorderLayout.SOUTH);
@@ -235,6 +211,10 @@ public class frmIniciar extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -247,11 +227,9 @@ public class frmIniciar extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Usuario;
     public javax.swing.JButton btnAbrirRecordarContraseña;
-    public javax.swing.JButton btnAbrirRegistro;
     public javax.swing.JButton btnIngresar;
     public javax.swing.JButton btnSalir;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel panBotones;

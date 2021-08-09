@@ -8,17 +8,22 @@ import java.sql.SQLException;
 
 public class Usuario {
     private int codigo;
+    private String perfil;
     private String username;
     private String contraseña;
     private String email;
     private Boolean conectado;
+    private Boolean estado;
+    private final String[] cabecera = {"ID","Perfil","Usuario","Email"};
     
-    public Usuario(String username, String contraseña,String email) throws InvalidPasswordException, InvalidEmailException, InvalidUsernameException{
+    public Usuario(String perfil,String username,String contraseña,String email,boolean estado) throws InvalidPasswordException, InvalidEmailException, InvalidUsernameException{
         setCodigo();
         setUsername(username);
         setContraseña(contraseña);
         setEmail(email);
+        this.perfil = perfil;
         this.conectado = Boolean.FALSE;
+        this.estado = estado;
     }
 
     public Usuario() {
@@ -33,36 +38,57 @@ public class Usuario {
         this.contraseña = contraseña;
     }
 
-    public Usuario(int codigo, String username, String contraseña, String email, Boolean conectado) {
+    public Usuario(int codigo,String perfil,String username,String contraseña,String email,boolean estado,boolean conectado) {
         this.codigo = codigo;
+        this.perfil = perfil;
         this.username = username;
         this.contraseña = contraseña;
         this.email = email;
+        this.estado = estado;
         this.conectado = conectado;
+    }
+    
+    public String[][] getDatos(){
+        Conexion con = new Conexion();
+        String SQL = "select * from usuario where estado="+true+"";   //Buscar nick's que empiezen con "filtro"
+        ResultSet resultado=con.consultar(SQL);
+        String[][] datos = null;
+        try{
+            resultado.last();
+            datos= new String[resultado.getRow()][4];
+            resultado.beforeFirst();
+            int i=0;
+            while(resultado.next()){
+                datos[i][0]= String.valueOf(resultado.getInt("codigo"));
+                datos[i][1]= resultado.getString("perfil");
+                datos[i][2]= resultado.getString("username");
+                datos[i][3]= resultado.getString("email");
+                i++;
+            }
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+        return datos;
+    }
+
+    public String[] getCabecera() {
+        return cabecera;
+    }
+
+    public String getPerfil() {
+        return perfil;
+    }
+
+    public Boolean getEstado() {
+        return estado;
     }
     
     public String insertar(){
         Conexion conexion = new Conexion();
-        String SQL = "insert into usuario (codigo,username,contraseña,email,conectado) values ('"+this.codigo+"','"+this.username+"','"+this.contraseña+"','"+this.email+"',"+this.conectado+")";
+        String SQL = "insert into usuario (codigo,username,contraseña,email,conectado,perfil,estado) values "
+                + "('"+this.codigo+"','"+this.username+"','"+this.contraseña+"','"+this.email+"',"+this.conectado+",'"+this.perfil+"',"+this.estado+")";
         return conexion.ejecutar(SQL);
     }
-    /*
-    private void setId() {
-        Conexion conexion = new Conexion();
-        String SQL = "select * from producto where nombre='"+this.nombre+"' and cantidad='"+this.cantidad+"' and precio='"+this.precio+"'";
-        
-        try{
-            ResultSet resultado = conexion.consultar(SQL);
-            
-            if(resultado.next()){
-                this.id = resultado.getInt("id");
-            }
-        
-        }catch(SQLException e){
-            e.printStackTrace();
-        }
-    }
-    */
     public Usuario loguear(){
         Usuario result = null;
         Conexion conexion = new Conexion();
@@ -73,12 +99,15 @@ public class Usuario {
             
             if(resultado.next()){
                 this.codigo=resultado.getInt("codigo");
+                this.perfil=resultado.getString("perfil");
+                this.username=resultado.getString("username");
+                this.contraseña=resultado.getString("contraseña");
                 this.email=resultado.getString("email");
                 this.conectado = Boolean.TRUE;
+                this.estado = resultado.getBoolean("estado");
                 actualizar();
-                result = new Usuario(codigo, username, contraseña, email, conectado);
+                result = new Usuario(codigo, perfil, username, contraseña, this.email, estado, conectado);
             }
-        
         }catch(SQLException e){
             e.printStackTrace();
         }
@@ -95,11 +124,13 @@ public class Usuario {
             
             if(resultado.next()){
                 this.codigo=resultado.getInt("codigo");
+                this.perfil=resultado.getString("perfil");
                 this.username=resultado.getString("username");
                 this.contraseña=resultado.getString("contraseña");
                 this.email=resultado.getString("email");
                 this.conectado = Boolean.FALSE;
-                result = new Usuario(this.codigo, this.username,this.contraseña,this.email,this.conectado);
+                this.estado = resultado.getBoolean("estado");
+                result = new Usuario(codigo, perfil, username, contraseña, this.email, estado, conectado);
             }
         
         }catch(SQLException e){
@@ -118,11 +149,13 @@ public class Usuario {
             
             if(resultado.next()){
                 this.codigo=resultado.getInt("codigo");
+                this.perfil=resultado.getString("perfil");
                 this.username=resultado.getString("username");
                 this.contraseña=resultado.getString("contraseña");
                 this.email=resultado.getString("email");
                 this.conectado = Boolean.FALSE;
-                result = new Usuario(this.codigo, this.username,this.contraseña,this.email,this.conectado);
+                this.estado = resultado.getBoolean("estado");
+                result = new Usuario(codigo, perfil, username, contraseña, this.email, estado, conectado);
             }
         }catch(SQLException e){
             e.printStackTrace();
@@ -170,11 +203,14 @@ public class Usuario {
         ResultSet resultado = conexion.consultar(SQL);
         try {
             if (resultado.next()){ 
-            this.username=resultado.getString("username");
-            this.contraseña=resultado.getString("contraseña");
-            this.email=resultado.getString("email");
-            this.conectado = resultado.getBoolean("conectado");
-            return true;
+                this.codigo=resultado.getInt("codigo");
+                this.perfil=resultado.getString("perfil");
+                this.username=resultado.getString("username");
+                this.contraseña=resultado.getString("contraseña");
+                this.email=resultado.getString("email");
+                this.estado = resultado.getBoolean("estado");
+                this.conectado = resultado.getBoolean("conectado");
+                return true;
             }else{
                 return false;
             }
@@ -183,14 +219,18 @@ public class Usuario {
             return false;
         }
     }
+
+    public int getCodigo() {
+        return codigo;
+    }
     
     public String actualizar() {
         Conexion conexion = new Conexion();
         String SQL = "update usuario set username='"+this.username
-        +"', contraseña='"+this.contraseña+"', email='"+this.email+"', conectado="+this.conectado+"  where codigo='"+this.codigo+"'";
+        +"', contraseña='"+this.contraseña+"', email='"+this.email+"', conectado="+this.conectado+", perfil='"+this.perfil+"', estado="+this.estado+"  where codigo='"+this.codigo+"'";
         return conexion.ejecutar(SQL);
     }
-    
+    /*
     public String[][] buscar(String filtro){
         Conexion con = new Conexion();
         String SQL = "select * from usuario where username like '"+filtro+"%'";   //Buscar nick's que empiezen con "filtro"
@@ -203,9 +243,10 @@ public class Usuario {
             int i=0;
             while(resultado.next()){
                 datos[i][0]= resultado.getString("codigo");
-                datos[i][1]= resultado.getString("username");
-                datos[i][2]= resultado.getString("contraseña");
-                datos[i][3]= resultado.getString("email");
+                datos[i][1]= resultado.getString("perfil");
+                datos[i][2]= resultado.getString("username");
+                datos[i][3]= resultado.getString("contraseña");
+                datos[i][4]= resultado.getString("email");
                 i++;
             }
         }catch(SQLException e){
@@ -214,7 +255,7 @@ public class Usuario {
         return datos;
     
     }
-    
+    */
     public Boolean isConectado() {
         return conectado;
     }

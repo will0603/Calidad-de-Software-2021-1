@@ -58,16 +58,6 @@ public class ControladorLoginInicio {
             }
         });
     
-        this.vista.btnAbrirRegistro.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                  vista.dispose();
-                  frmRegistrar fRegistro = new frmRegistrar();
-                  ControladorLoginRegistrar controlregistro = new ControladorLoginRegistrar(fRegistro) ;
-                  controlregistro.iniciar();
-            }
-        });
-        
         this.vista.btnAbrirRecordarContraseña.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
