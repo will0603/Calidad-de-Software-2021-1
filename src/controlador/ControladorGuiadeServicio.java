@@ -52,9 +52,10 @@ public class ControladorGuiadeServicio {
                     System.out.println(celular.insertar());
                     System.out.println(guia.insertar());
                     vista.dispose();
-                    frmMenu frmmenu = new frmMenu();
-                    frmmenu.setLocationRelativeTo(null);
-                    frmmenu.setVisible(true);
+                    
+                    //frmMenu frmmenu = new frmMenu();
+                    //frmmenu.setLocationRelativeTo(null);
+                    //frmmenu.setVisible(true);
                     
                     //JOptionPane.showMessageDialog(frmmenu, "La guia de servicio se registro, 100% ectivo.");
                 }else{
@@ -77,6 +78,8 @@ public class ControladorGuiadeServicio {
                 }
             }
         });
+        
+        
         
         vista.addWindowListener(new WindowListener() {
             @Override

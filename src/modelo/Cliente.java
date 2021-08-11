@@ -94,5 +94,21 @@ public class Cliente {
     public String getCorreo() {
         return correo;
     }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
+    public void setNumeroDeCelular(String numeroDeCelular) {
+        this.numeroDeCelular = numeroDeCelular;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
     
 }

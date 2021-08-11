@@ -19,6 +19,7 @@ import vista.frmIniciar;
 import vista.frmMantenimientoUsuario;
 import vista.frmMenuAdmin;
 import vista.frmReportEstadoRecepcion;
+import vista.frmReportMarcas;
 
 /**
  *
@@ -104,6 +105,21 @@ public class ControladorMenuAdmin {
                 torta.setLocationRelativeTo(null);
             }
         });
+        
+        vista.menuMarcas.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                GuiadeServicio guia = new GuiadeServicio();
+                int[] datos = guia.getMarcasPie2D();
+                System.out.println(Arrays.toString(datos));
+                frmReportMarcas torta = new frmReportMarcas(datos);
+                torta.setVisible(true);
+                torta.setLocationRelativeTo(null);
+            
+            }
+        });
+        
     }
     
     public void iniciar(){

@@ -211,10 +211,11 @@ public class ControladorGuiadeVenta {
                 
                 
                 vista.dispose();
+                /*
                 frmMenu frmmenu = new frmMenu();
                 frmmenu.setLocationRelativeTo(null);
                 frmmenu.setVisible(true);
-                
+                */
                 
                 //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }

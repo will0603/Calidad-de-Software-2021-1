@@ -59,6 +59,7 @@ public class frmEditarGuiadeServicio extends javax.swing.JFrame {
         btnBuscar = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         txtNumeroGuia = new javax.swing.JTextField();
+        btnLimpiar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -148,6 +149,8 @@ public class frmEditarGuiadeServicio extends javax.swing.JFrame {
 
         jLabel11.setText("Numero:");
 
+        btnLimpiar.setText("Limpiar");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -193,7 +196,10 @@ public class frmEditarGuiadeServicio extends javax.swing.JFrame {
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(txtdni)
                                         .addComponent(txtcorreo, javax.swing.GroupLayout.DEFAULT_SIZE, 207, Short.MAX_VALUE))
-                                    .addComponent(btnBuscar)))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(btnBuscar)
+                                        .addGap(26, 26, 26)
+                                        .addComponent(btnLimpiar))))
                             .addComponent(jLabel2)
                             .addComponent(jLabel9)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -224,7 +230,8 @@ public class frmEditarGuiadeServicio extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnBuscar)
                     .addComponent(jLabel11)
-                    .addComponent(txtNumeroGuia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNumeroGuia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnLimpiar))
                 .addGap(19, 19, 19)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel1)
@@ -382,6 +389,7 @@ public class frmEditarGuiadeServicio extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnBuscar;
+    public javax.swing.JButton btnLimpiar;
     public javax.swing.JButton btnregistrar;
     public javax.swing.JButton btnvolver;
     public javax.swing.JCheckBox jCheckBoxcaidadeagua;

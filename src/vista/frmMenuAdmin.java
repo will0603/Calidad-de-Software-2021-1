@@ -49,6 +49,7 @@ public class frmMenuAdmin extends javax.swing.JFrame {
         menuPro = new javax.swing.JMenuItem();
         menuArchivo1 = new javax.swing.JMenu();
         menuEstadosRecepcion = new javax.swing.JMenuItem();
+        menuMarcas = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -62,16 +63,16 @@ public class frmMenuAdmin extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(140, Short.MAX_VALUE)
+                .addContainerGap(183, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(104, 104, 104))
+                .addGap(169, 169, 169))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(129, 129, 129)
+                .addGap(206, 206, 206)
                 .addComponent(jLabel1)
-                .addContainerGap(156, Short.MAX_VALUE))
+                .addContainerGap(222, Short.MAX_VALUE))
         );
 
         menuArchivo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ordendetrabajo/folder.png"))); // NOI18N
@@ -146,9 +147,13 @@ public class frmMenuAdmin extends javax.swing.JFrame {
             }
         });
 
-        menuEstadosRecepcion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ordendetrabajo/exit.png"))); // NOI18N
+        menuEstadosRecepcion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ordendetrabajo/job.png"))); // NOI18N
         menuEstadosRecepcion.setText("Estados de Recepcion");
         menuArchivo1.add(menuEstadosRecepcion);
+
+        menuMarcas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ordendetrabajo/job.png"))); // NOI18N
+        menuMarcas.setText("Marcas Frecuentes");
+        menuArchivo1.add(menuMarcas);
 
         jMenuBar1.add(menuArchivo1);
 
@@ -248,6 +253,7 @@ public class frmMenuAdmin extends javax.swing.JFrame {
     public javax.swing.JMenuItem menuEstadosRecepcion;
     public javax.swing.JMenuItem menuGS;
     public javax.swing.JMenuItem menuGV;
+    public javax.swing.JMenuItem menuMarcas;
     public javax.swing.JMenuItem menuPro;
     public javax.swing.JMenuItem menuProducto;
     public javax.swing.JMenuItem menuSalir;

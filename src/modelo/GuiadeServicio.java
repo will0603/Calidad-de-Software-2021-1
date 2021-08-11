@@ -193,4 +193,31 @@ public class GuiadeServicio {
         return cell;
     }
     
+    public int[] getMarcasPie2D(){
+        Conexion con = new Conexion();
+        String SQL = "select * from guiaservicio";   //Buscar nick's que empiezen con "filtro"
+        ResultSet resultado=con.consultar(SQL);
+        int[] datos = new int[4];
+        Arrays.fill(datos, 0);
+        try{
+            while(resultado.next()){
+                int i = resultado.getInt("Celular_idCelular");
+                Celular celular = new Celular(i);
+                celular.consultar();
+                if(celular.getMarca().equalsIgnoreCase("HUAWEI")){
+                    datos[0]++;
+                }if(celular.getMarca().equalsIgnoreCase("LG")){
+                    datos[1]++;
+                }if(celular.getMarca().equalsIgnoreCase("MOTOROLA")){
+                    datos[2]++;
+                }if(celular.getMarca().equalsIgnoreCase("SAMSUNG")){
+                    datos[3]++;
+                }
+            }
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+        return datos;
+    }
+    
 }
