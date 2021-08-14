@@ -45,6 +45,7 @@ public class frmIniciar extends javax.swing.JFrame {
         jLabel4.setText("Le enviaremos sus credenciales");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         panTitulo.setBackground(new java.awt.Color(0, 0, 0));
 

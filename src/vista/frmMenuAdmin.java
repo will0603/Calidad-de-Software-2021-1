@@ -52,6 +52,7 @@ public class frmMenuAdmin extends javax.swing.JFrame {
         menuMarcas = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
