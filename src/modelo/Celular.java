@@ -5,6 +5,8 @@
  */
 package modelo;
 
+import java.sql.CallableStatement;
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -51,6 +53,38 @@ public class Celular {
         this.conMicroSD = conMicroSD;
         this.caidaDeAgua = caidaDeAgua;
         
+    }
+    
+    public Celular(int id, String marca, String modelo, String falla, boolean conChip, boolean conMicroSD, boolean caidaDeAgua) {
+        this.id = id;
+        this.marca = marca;
+        this.modelo = modelo;
+        this.falla = falla;
+        this.conChip = conChip;
+        this.conMicroSD = conMicroSD;
+        this.caidaDeAgua = caidaDeAgua;
+        
+    }
+    
+    public Celular(int id, String marca, String modelo, String falla, boolean conChip, boolean conMicroSD, boolean noPrende, boolean caidaDeAgua, boolean garantía) {
+        this.id = id;
+        this.marca = marca;
+        this.modelo = modelo;
+        this.falla = falla;
+        this.conChip = conChip;
+        this.conMicroSD = conMicroSD;
+        this.noPrende = noPrende;
+        this.caidaDeAgua = caidaDeAgua;
+        this.garantía = garantía;
+    }
+    
+    public Celular(int id, boolean conChip, boolean conMicroSD, boolean noPrende, boolean caidaDeAgua, boolean garantía){
+        this.id = id;
+        this.conChip = conChip;
+        this.conMicroSD = conMicroSD;
+        this.noPrende = noPrende;
+        this.caidaDeAgua = caidaDeAgua;
+        this.garantía = garantía;
     }
     
     public Celular(String marca, String modelo, String falla, String Chip, String MicroSd, String CaidadeAgua){
@@ -107,6 +141,29 @@ public class Celular {
             }
         }catch(SQLException e){
             e.printStackTrace();
+        }
+    }
+    
+    public void updateBooleans(){
+        Conexion conectar = new Conexion();
+        String SQL = "{call updated_celular_boolean(?,?,?,?,?,?)}";
+        CallableStatement stmt = null;
+        
+        try(Connection conn = conectar.conectarMySQL()){
+            stmt = conn.prepareCall(SQL);
+            stmt.setInt(1,this.id);
+            stmt.setBoolean(2, this.conChip);
+            stmt.setBoolean(3, this.conMicroSD);
+            stmt.setBoolean(4, this.noPrende);
+            stmt.setBoolean(5, this.caidaDeAgua);
+            stmt.setBoolean(6, this.garantía);
+            
+            ResultSet rs = stmt.executeQuery();
+            
+            stmt.executeUpdate();
+        
+        }catch(Exception e){
+            System.out.println(e);
         }
     }
 

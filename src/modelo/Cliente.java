@@ -5,8 +5,11 @@
  */
 package modelo;
 
+import java.sql.CallableStatement;
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -26,9 +29,21 @@ public class Cliente {
         this.numeroDeCelular = numeroDeCelular;
         this.correo = correo;
     }
+    
+    public Cliente(int id,String nombre, String dni, String numeroDeCelular, String correo) {
+        this.id = id;
+        this.nombre = nombre;
+        this.dni = dni;
+        this.numeroDeCelular = numeroDeCelular;
+        this.correo = correo;
+    }
 
     public Cliente(int id) {
         this.id = id;
+    }
+    public Cliente(int id, String nrocelular) {
+        this.id = id;
+        this.numeroDeCelular = nrocelular;
     }
     
     public void setId() {
@@ -72,6 +87,24 @@ public class Cliente {
         }catch(SQLException e){
             e.printStackTrace();
             return false;
+        }
+    }
+    
+    public void updateNroCell(){
+        Conexion conectar = new Conexion();
+        String SQL = "{call updated_cliente_nrocelular(?,?)}";
+        CallableStatement stmt = null;
+        
+        try(Connection conn = conectar.conectarMySQL()){
+            stmt = conn.prepareCall(SQL);
+            stmt.setInt(1,this.id);
+            stmt.setString(2, this.numeroDeCelular);
+            ResultSet rs = stmt.executeQuery();
+            
+            stmt.executeUpdate();
+        
+        }catch(Exception e){
+            System.out.println(e);
         }
     }
 

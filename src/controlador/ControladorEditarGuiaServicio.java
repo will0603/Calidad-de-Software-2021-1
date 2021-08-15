@@ -50,8 +50,8 @@ public class ControladorEditarGuiaServicio {
                     vista.jCheckBoxconCHIP.setSelected(cell.isConChip());
                     vista.jCheckBoxconMicroSD.setSelected(cell.isConMicroSD());
                     vista.jCheckBoxcaidadeagua.setSelected(cell.isCaidaDeAgua());
-                    vista.jCheckBoxgarantia.setEnabled(false);
-                    vista.jCheckBoxnoprende.setEnabled(false);
+                    //vista.jCheckBoxgarantia.setEnabled(false);
+                    //vista.jCheckBoxnoprende.setEnabled(false);
                     Inhabilitar();
                     }
                 }else{
@@ -84,7 +84,22 @@ public class ControladorEditarGuiaServicio {
             @Override
             public void actionPerformed(ActionEvent ae) {
                 //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-                
+                if(verificar()){
+                    GuiadeServicio guia = new GuiadeServicio(Integer.parseInt(vista.txtNumeroGuia.getText()), vista.txadescripcion.getText());
+                    guia.updateDescripcion();
+                    Cliente client = guia.BuscarGServicio();
+                    
+                    Cliente clientId = new Cliente(client.getId(),vista.txtcelular.getText());
+                    clientId.updateNroCell();
+                    
+                    Celular cell = guia.BuscarGServicioC();
+                    Celular cellId = new Celular(cell.getId(), vista.jCheckBoxconCHIP.isSelected(), vista.jCheckBoxconMicroSD.isSelected(), vista.jCheckBoxnoprende.isSelected(), vista.jCheckBoxcaidadeagua.isSelected(), vista.jCheckBoxgarantia.isSelected());
+                    cellId.updateBooleans();
+                    
+                    JOptionPane.showMessageDialog(vista, "Actualización exitosa");
+                }else{
+                    System.out.println("Ingrese los campos que desea actualizar");
+                }
             
             
             }
@@ -104,6 +119,16 @@ public class ControladorEditarGuiaServicio {
         return resultado;
     }
     
+    private boolean verificar() {
+        boolean resultado = false;
+        if (this.vista.txtfalladecelular.getText().length()!= 0 ||
+                this.vista.txtcelular.getText().length() != 0)   
+        {
+            resultado = true;
+        }
+        return resultado;
+    }
+    
     public void limpiar(){
         vista.txtNumeroGuia.setEditable(true);
         vista.txtnombre.setText("");
@@ -117,24 +142,19 @@ public class ControladorEditarGuiaServicio {
         vista.jCheckBoxconCHIP.setSelected(false);
         vista.jCheckBoxconMicroSD.setSelected(false);
         vista.jCheckBoxcaidadeagua.setSelected(false);
-        vista.jCheckBoxgarantia.setEnabled(false);
-        vista.jCheckBoxnoprende.setEnabled(false);
+        vista.jCheckBoxgarantia.setSelected(false);
+        vista.jCheckBoxnoprende.setSelected(false);
     }
+    
     public void Inhabilitar(){
         vista.txtNumeroGuia.setEditable(false);
         vista.txtnombre.setEditable(false);
         vista.txtdni.setEditable(false);
-        /*
-        vista.txtcelular.setEditable(true);
-        vista.txtcorreo.setEditable(true);
-        vista.txtfalladecelular.setEditable(false);
         vista.txtmodelo.setEditable(false);
+        vista.jComboBoxmarca.setEnabled(false);
         vista.txttotal.setEditable(false);
-        //vista.txadescripcion.setText("");
-        vista.jCheckBoxconCHIP.setSelected(false);
-        vista.jCheckBoxconMicroSD.setSelected(false);
-        vista.jCheckBoxcaidadeagua.setSelected(false);
-        vista.jCheckBoxgarantia.setEnabled(false);
-        vista.jCheckBoxnoprende.setEnabled(false);*/
+        vista.txtcorreo.setEditable(false);
+        vista.txtfalladecelular.setEditable(false);
+       
     }
 }

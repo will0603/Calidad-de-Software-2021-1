@@ -55,6 +55,11 @@ public class GuiadeServicio {
     public GuiadeServicio(int id){
         this.id=id;
     }
+    
+    public GuiadeServicio(int id, String descripcion){
+        this.id=id;
+        this.descripcionAdicional = descripcion;
+    }
 
     public GuiadeServicio() {
     }
@@ -166,13 +171,15 @@ public class GuiadeServicio {
             stmt.setInt(1,this.id);
             ResultSet rs = stmt.executeQuery();
             if(rs.next()){
-            client = new Cliente(rs.getString("cliente.nombre"), rs.getString("cliente.dni"), rs.getString("cliente.nrocelular"),rs.getString("cliente.correo"));
+            client = new Cliente(rs.getInt("idcliente"),rs.getString("cliente.nombre"), rs.getString("cliente.dni"), rs.getString("cliente.nrocelular"),rs.getString("cliente.correo"));
             } 
         }catch(Exception e){
             System.out.println(e);
         }
         return client;
     }
+    
+    
     
     public Celular BuscarGServicioC(){
         Conexion conectar = new Conexion();
@@ -184,7 +191,7 @@ public class GuiadeServicio {
             stmt.setInt(1,this.id);
             ResultSet rs = stmt.executeQuery();
             if(rs.next()){
-            cell = new Celular(rs.getString("celular.marca"), rs.getString("celular.modelo"), rs.getString("celular.falla"), 
+            cell = new Celular(rs.getInt("celular.idcelular"),rs.getString("celular.marca"), rs.getString("celular.modelo"), rs.getString("celular.falla"), 
                         rs.getBoolean("celular.conChip"), rs.getBoolean("celular.conMicroSD"), rs.getBoolean("celular.caidaAgua"));
             } 
         }catch(Exception e){
@@ -218,6 +225,25 @@ public class GuiadeServicio {
             e.printStackTrace();
         }
         return datos;
+    }
+    
+    public void updateDescripcion(){
+        Conexion conectar = new Conexion();
+        String SQL = "{call updated_guiaservicio_descripcion(?,?)}";
+        CallableStatement stmt = null;
+        
+        try(Connection conn = conectar.conectarMySQL()){
+            stmt = conn.prepareCall(SQL);
+            stmt.setInt(1,this.id);
+            stmt.setString(2, this.descripcionAdicional);
+            ResultSet rs = stmt.executeQuery();
+            
+            stmt.executeUpdate();
+        
+        }catch(Exception e){
+            System.out.println(e);
+        }
+    
     }
     
 }
