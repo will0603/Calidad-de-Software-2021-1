@@ -82,7 +82,7 @@ public class ControladorMenuAdmin {
                 controlador.iniciar();
             }
         });
-        
+        /*
         vista.menuGV.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
@@ -93,7 +93,7 @@ public class ControladorMenuAdmin {
             
             }
         });
-        
+        */
         vista.menuEstadosRecepcion.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {

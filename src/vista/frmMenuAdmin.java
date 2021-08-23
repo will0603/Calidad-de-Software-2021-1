@@ -45,7 +45,6 @@ public class frmMenuAdmin extends javax.swing.JFrame {
         menuProducto = new javax.swing.JMenuItem();
         menuEditar = new javax.swing.JMenu();
         menuGS = new javax.swing.JMenuItem();
-        menuGV = new javax.swing.JMenuItem();
         menuPro = new javax.swing.JMenuItem();
         menuArchivo1 = new javax.swing.JMenu();
         menuEstadosRecepcion = new javax.swing.JMenuItem();
@@ -124,10 +123,6 @@ public class frmMenuAdmin extends javax.swing.JFrame {
         menuGS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ordendetrabajo/edit.png"))); // NOI18N
         menuGS.setText("Guia de Servicio");
         menuEditar.add(menuGS);
-
-        menuGV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ordendetrabajo/edit.png"))); // NOI18N
-        menuGV.setText("Guia de Venta");
-        menuEditar.add(menuGV);
 
         menuPro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ordendetrabajo/edit.png"))); // NOI18N
         menuPro.setText("Productos");
@@ -253,7 +248,6 @@ public class frmMenuAdmin extends javax.swing.JFrame {
     public javax.swing.JMenu menuEditar;
     public javax.swing.JMenuItem menuEstadosRecepcion;
     public javax.swing.JMenuItem menuGS;
-    public javax.swing.JMenuItem menuGV;
     public javax.swing.JMenuItem menuMarcas;
     public javax.swing.JMenuItem menuPro;
     public javax.swing.JMenuItem menuProducto;

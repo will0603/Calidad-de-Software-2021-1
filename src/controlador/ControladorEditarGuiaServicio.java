@@ -97,6 +97,7 @@ public class ControladorEditarGuiaServicio {
                     cellId.updateBooleans();
                     
                     JOptionPane.showMessageDialog(vista, "Actualización exitosa");
+                    limpiar();
                 }else{
                     System.out.println("Ingrese los campos que desea actualizar");
                 }

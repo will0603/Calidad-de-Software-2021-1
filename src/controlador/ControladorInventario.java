@@ -17,36 +17,73 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import modelo.Accesorio;
 import modelo.Conexion;
-import ordendetrabajo.conectar;
-import vista.frmAñadirProducto;
+import vista.frmInventario;
 
 /**
  *
  * @author LENOVO
  */
-public class ControladorAñadirProducto {
-    private frmAñadirProducto vista;
+public class ControladorInventario {
+    private frmInventario vista;
     
-    public ControladorAñadirProducto(frmAñadirProducto vista){
+    public ControladorInventario(frmInventario vista){
     this.vista = vista;
     
-    vista.btnGuardar.addActionListener(new ActionListener() {
+    vista.btnBuscar.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent ae) {
             //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             if(validar()){
-                Accesorio producto = new Accesorio(vista.txtCodigo.getText(), vista.txtNombre.getText(), Integer.parseInt(vista.txtCantidad.getText()), 
-                                                vista.txtDescripcion.getText(), Float.parseFloat(vista.txtPrecio.getText()));
-                producto.insert2();
+                Accesorio producto = new Accesorio(vista.txtCodigo.getText());
+                String[] datos = new String[5];
+                producto.getProdcuto(datos, vista.txtCodigo.getText());
+                vista.txtNombre.setText(datos[1]);
+                vista.txtDescripcion.setText(datos[4]);
+                vista.txtCantidad.setText(datos[2]);
+                vista.txtPrecio.setText(datos[3]);
+                vista.txtNombre.setEditable(false);
+                //vista.txtNombre.setEnabled(false);
+                //vista.txtDescripcion.setEnabled(false);
+                vista.txtDescripcion.setEditable(false);
+                vista.txtCantidad.setEditable(false);
+                vista.txtPrecio.setEditable(false);
                 
-                JOptionPane.showMessageDialog(null, "Operación exitosa");
-                limpiar();
             }else{
-                JOptionPane.showMessageDialog(vista, "Llene todos los campos");
+                JOptionPane.showMessageDialog(null,"No existe el producto");
+            }
+            
+        }
+    });
+    /*
+    vista.btnActualizar.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent ae) {
+            //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            if(validar()){
+                Conexion conectar = new Conexion();
+                String SQL = "{call updated_producto(?,?,?)}";
+                CallableStatement stmt = null;
+                
+                try(Connection conn = conectar.conectarMySQL() ){
+            
+                    stmt = conn.prepareCall(SQL);
+                    stmt.setString(1,vista.txtCodigo.getText());
+                    stmt.setInt(2,Integer.parseInt(vista.txtCantidad.getText()));
+                    stmt.setFloat(3, Float.parseFloat(vista.txtPrecio.getText()));
+                    //ResultSet rs = stmt.executeQuery();
+                    stmt.executeUpdate();
+                    
+                    JOptionPane.showMessageDialog(vista, "Operacion exitosa");
+                    limpiar();
+                }catch(Exception e){
+                    System.out.println(e);
+                }
+            }else{
+                JOptionPane.showMessageDialog(null, "Ingrese los datos que desea actualizar");
             }
         }
     });
-    
+    */
     vista.btnCancelar.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent ae) {
@@ -73,12 +110,19 @@ public class ControladorAñadirProducto {
                 
             } catch (SQLException ex) {
                 Logger.getLogger(ControladorAñadirProducto.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            
-        
+            }  
         }
     });
     
+    vista.btnLimpiar.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent ae) {
+            //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            
+            limpiar();
+        
+        }
+    });
     
     }
     
@@ -88,18 +132,27 @@ public class ControladorAñadirProducto {
     }
     
     public boolean validar(){
-        boolean result = false;
+        boolean resultado = false;
         
-        if(this.vista.txtCodigo.getText().length() !=0 &&
-            this.vista.txtNombre.getText().length() !=0 &&
-            this.vista.txtCantidad.getText().length() !=0 &&
-            this.vista.txtDescripcion.getText().length() !=0 &&
-            this.vista.txtPrecio.getText().length() !=0 ){
-        
-                result = true;
-                return result;
+        if(this.vista.txtCodigo.getText().length() != 0){
+            resultado = true;
+            return resultado;
         }else{
-            return result;
+            return resultado;
+        }
+        
+    }
+    
+    public boolean validarT(){
+        boolean resultado = false;
+        
+        if(this.vista.txtCodigo.getText().length() != 0 &&
+                this.vista.txtCantidad.getText().length() != 0 &&
+                this.vista.txtPrecio.getText().length() != 0){
+            resultado = true;
+            return resultado;
+        }else{
+            return resultado;
         }
     }
     
@@ -110,20 +163,6 @@ public class ControladorAñadirProducto {
         vista.txtNombre.setText("");
         vista.txtPrecio.setText("");
     }
-    /*
-    public void mostrar() throws SQLException{
-        Conexion conectar = new Conexion();
-        String SQL = "{call get_producto}";
-        CallableStatement stmt = null;
-        String[] cabecera = new String[5];
-        cabecera[0] = "Código";
-        cabecera[1] = "Nombre";
-        cabecera[2] = "Descripción";
-        cabecera[3] = "Cantidad";
-        cabecera[4] = "Precio";
-        //datos[4] = "Código";
-    
-    }*/
     
     public String[][] getDatosProducto(String[][] datos) throws SQLException{
         Conexion con = new Conexion();

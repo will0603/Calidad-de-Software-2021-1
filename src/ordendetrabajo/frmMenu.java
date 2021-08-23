@@ -10,6 +10,7 @@ import controlador.ControladorBuscarServicio;
 import controlador.ControladorEditarProducto;
 import controlador.ControladorGuiadeServicio;
 import controlador.ControladorGuiadeVenta;
+import controlador.ControladorInventario;
 import controlador.ControladorLoginInicio;
 import general.Sistema;
 import javax.swing.UIManager;
@@ -20,6 +21,7 @@ import vista.frmEditarProducto;
 import vista.frmGuiadeServicio;
 import vista.frmIniciar;
 import vista.frmGuiaVenta;
+import vista.frmInventario;
 
 /**
  *
@@ -54,6 +56,9 @@ public class frmMenu extends javax.swing.JFrame {
         jMenu4 = new javax.swing.JMenu();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
+        btnInventario = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 51, 51));
@@ -83,7 +88,7 @@ public class frmMenu extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(178, 178, 178)
                 .addComponent(jLabel1)
-                .addContainerGap(251, Short.MAX_VALUE))
+                .addContainerGap(253, Short.MAX_VALUE))
         );
 
         jMenuBar1.setBackground(new java.awt.Color(204, 204, 204));
@@ -151,7 +156,23 @@ public class frmMenu extends javax.swing.JFrame {
         });
         jMenu4.add(jMenuItem5);
 
+        btnInventario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ordendetrabajo/icons8-acercar-24.png"))); // NOI18N
+        btnInventario.setText("Inventario");
+        btnInventario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInventarioActionPerformed(evt);
+            }
+        });
+        jMenu4.add(btnInventario);
+
         jMenuBar1.add(jMenu4);
+
+        jMenu2.setText("Repositorio");
+
+        jMenuItem1.setText("Soluciones");
+        jMenu2.add(jMenuItem1);
+
+        jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
 
@@ -222,6 +243,13 @@ public class frmMenu extends javax.swing.JFrame {
         control.iniciar();
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
+    private void btnInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInventarioActionPerformed
+        // TODO add your handling code here:
+        frmInventario inventario = new frmInventario();
+        ControladorInventario controlador = new ControladorInventario(inventario);
+        controlador.iniciar();
+    }//GEN-LAST:event_btnInventarioActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -260,11 +288,14 @@ public class frmMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JMenuItem btnInventario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
