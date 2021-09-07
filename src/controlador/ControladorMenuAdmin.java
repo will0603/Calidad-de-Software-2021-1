@@ -12,12 +12,18 @@ import java.util.Arrays;
 import javax.swing.Action;
 import modelo.GuiadeServicio;
 import vista.frmAñadirProducto;
+import vista.frmBuscarGuiaServicio;
+import vista.frmBuscarGuiaVentas;
 import vista.frmEditarGuiaVenta;
 import vista.frmEditarGuiadeServicio;
 import vista.frmEditarProducto;
+import vista.frmGuiaVenta;
+import vista.frmGuiadeServicio;
 import vista.frmIniciar;
+import vista.frmInventario;
 import vista.frmMantenimientoUsuario;
 import vista.frmMenuAdmin;
+import vista.frmRegistrarCliente;
 import vista.frmReportEstadoRecepcion;
 import vista.frmReportMarcas;
 
@@ -116,6 +122,72 @@ public class ControladorMenuAdmin {
                 frmReportMarcas torta = new frmReportMarcas(datos);
                 torta.setVisible(true);
                 torta.setLocationRelativeTo(null);
+            
+            }
+        });
+        
+        vista.menuCliente.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+               // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+               frmRegistrarCliente client = new frmRegistrarCliente();
+               ControladorRegistrarCliente control = new ControladorRegistrarCliente(client);
+               control.iniciar();
+            
+            }
+        });
+        
+        vista.menuServicio.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+               // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+               frmGuiadeServicio serv = new frmGuiadeServicio();
+               ControladorGuiadeServicio control = new ControladorGuiadeServicio(serv);
+               control.iniciar();
+            }
+        });
+        
+        vista.menuVenta.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+               // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+               frmGuiaVenta vent = new frmGuiaVenta();
+               ControladorGuiadeVenta control = new ControladorGuiadeVenta(vent);
+               control.iniciar();
+            
+            }
+        });
+        
+        vista.menuBuscarS.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                frmBuscarGuiaServicio buscaS = new frmBuscarGuiaServicio();
+                ControladorBuscarServicio control = new ControladorBuscarServicio(buscaS);
+                control.iniciar();
+            
+            }
+        });
+        vista.menuBuscarV.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                frmBuscarGuiaVentas buscaV = new frmBuscarGuiaVentas();
+                buscaV.setLocationRelativeTo(null);
+                buscaV.setVisible(true);
+                //ControladorBuscarServicio control = new ControladorBuscarServicio(buscaS);
+                //control.iniciar();
+            
+            }
+        });    
+        
+        vista.menuInventario.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                frmInventario invent = new frmInventario();
+                ControladorInventario control = new ControladorInventario(invent);
+                control.iniciar();
             
             }
         });

@@ -41,11 +41,18 @@ public class frmMenuAdmin extends javax.swing.JFrame {
         menuSalir = new javax.swing.JMenuItem();
         menuCrear = new javax.swing.JMenu();
         menuAddUser = new javax.swing.JMenuItem();
+        menuCliente = new javax.swing.JMenuItem();
         menuAñadir = new javax.swing.JMenu();
         menuProducto = new javax.swing.JMenuItem();
+        menuVenta = new javax.swing.JMenuItem();
+        menuServicio = new javax.swing.JMenuItem();
         menuEditar = new javax.swing.JMenu();
         menuGS = new javax.swing.JMenuItem();
         menuPro = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        menuBuscarS = new javax.swing.JMenuItem();
+        menuBuscarV = new javax.swing.JMenuItem();
+        menuInventario = new javax.swing.JMenuItem();
         menuArchivo1 = new javax.swing.JMenu();
         menuEstadosRecepcion = new javax.swing.JMenuItem();
         menuMarcas = new javax.swing.JMenuItem();
@@ -90,7 +97,7 @@ public class frmMenuAdmin extends javax.swing.JFrame {
         jMenuBar1.add(menuArchivo);
 
         menuCrear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ordendetrabajo/addemployee.png"))); // NOI18N
-        menuCrear.setText("Crear");
+        menuCrear.setText("Registrar");
         menuCrear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menuCrearActionPerformed(evt);
@@ -100,6 +107,10 @@ public class frmMenuAdmin extends javax.swing.JFrame {
         menuAddUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ordendetrabajo/addemployee.png"))); // NOI18N
         menuAddUser.setText("Usuario");
         menuCrear.add(menuAddUser);
+
+        menuCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ordendetrabajo/addemployee.png"))); // NOI18N
+        menuCliente.setText("Cliente");
+        menuCrear.add(menuCliente);
 
         jMenuBar1.add(menuCrear);
 
@@ -114,6 +125,19 @@ public class frmMenuAdmin extends javax.swing.JFrame {
             }
         });
         menuAñadir.add(menuProducto);
+
+        menuVenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ordendetrabajo/job.png"))); // NOI18N
+        menuVenta.setText("Guia de Venta");
+        menuAñadir.add(menuVenta);
+
+        menuServicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ordendetrabajo/job.png"))); // NOI18N
+        menuServicio.setText("Guia de Servicio");
+        menuServicio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuServicioActionPerformed(evt);
+            }
+        });
+        menuAñadir.add(menuServicio);
 
         jMenuBar1.add(menuAñadir);
 
@@ -134,6 +158,28 @@ public class frmMenuAdmin extends javax.swing.JFrame {
         menuEditar.add(menuPro);
 
         jMenuBar1.add(menuEditar);
+
+        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ordendetrabajo/icons8-acercar-24.png"))); // NOI18N
+        jMenu1.setText("Buscar");
+
+        menuBuscarS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ordendetrabajo/icons8-acercar-24.png"))); // NOI18N
+        menuBuscarS.setText("Guia de Servicio");
+        menuBuscarS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuBuscarSActionPerformed(evt);
+            }
+        });
+        jMenu1.add(menuBuscarS);
+
+        menuBuscarV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ordendetrabajo/icons8-acercar-24.png"))); // NOI18N
+        menuBuscarV.setText("Guia de Venta");
+        jMenu1.add(menuBuscarV);
+
+        menuInventario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ordendetrabajo/icons8-acercar-24.png"))); // NOI18N
+        menuInventario.setText("Inventario");
+        jMenu1.add(menuInventario);
+
+        jMenuBar1.add(jMenu1);
 
         menuArchivo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ordendetrabajo/folder.png"))); // NOI18N
         menuArchivo1.setText("Reporte");
@@ -201,6 +247,14 @@ public class frmMenuAdmin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_menuArchivo1ActionPerformed
 
+    private void menuServicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuServicioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_menuServicioActionPerformed
+
+    private void menuBuscarSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuBuscarSActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_menuBuscarSActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -238,19 +292,26 @@ public class frmMenuAdmin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    public javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     public javax.swing.JMenuItem menuAddUser;
     public javax.swing.JMenu menuArchivo;
     public javax.swing.JMenu menuArchivo1;
     public javax.swing.JMenu menuAñadir;
+    public javax.swing.JMenuItem menuBuscarS;
+    public javax.swing.JMenuItem menuBuscarV;
+    public javax.swing.JMenuItem menuCliente;
     public javax.swing.JMenu menuCrear;
     public javax.swing.JMenu menuEditar;
     public javax.swing.JMenuItem menuEstadosRecepcion;
     public javax.swing.JMenuItem menuGS;
+    public javax.swing.JMenuItem menuInventario;
     public javax.swing.JMenuItem menuMarcas;
     public javax.swing.JMenuItem menuPro;
     public javax.swing.JMenuItem menuProducto;
     public javax.swing.JMenuItem menuSalir;
+    public javax.swing.JMenuItem menuServicio;
+    public javax.swing.JMenuItem menuVenta;
     // End of variables declaration//GEN-END:variables
 }

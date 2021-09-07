@@ -79,10 +79,11 @@ public class ControladorBuscarServicio {
             public void actionPerformed(ActionEvent ae) {
                 //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
                 vista.dispose();
+                /*
                 frmMenu frmmenu = new frmMenu();
                 frmmenu.setLocationRelativeTo(null);
                 frmmenu.setVisible(true);
-            
+            */
             }
         });
         
