@@ -10,11 +10,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.ResultSet;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import javax.swing.JOptionPane;
 import modelo.Celular;
 import modelo.Cliente;
+import modelo.Conexion;
 import modelo.GuiadeServicio;
 import ordendetrabajo.frmMenu;
 import vista.frmGuiadeServicio;
@@ -67,12 +71,41 @@ public class ControladorGuiadeServicio {
         vista.btnmostrar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                if(validar()){
+                if(vista.txtdni.getText().length() != 0){
+                    Conexion con = new Conexion();
+                    String SQL = "{call get_cliente_by_dni(?)}";   
+                
+                
+                    CallableStatement stmt = null;
+                    String[] datos = null;
+                try(Connection conn = con.conectarMySQL() ){
+           
+                    stmt = conn.prepareCall(SQL);
+                    stmt.setString(1,vista.txtdni.getText());
+                
+                    ResultSet rs = stmt.executeQuery();
+                
+                    if(rs.getRow() <= 1){
+                        if(rs.next()){
+                        vista.txtnombre.setText(rs.getString("nombre"));
+                        //vista.txtDni.setText(rs.getString("dni"));
+                        vista.txtcelular.setText(rs.getString("nroCelular"));
+                        vista.txtcorreo.setText(rs.getString("correo"));
+                        }else{
+                        JOptionPane.showMessageDialog(null, "El cliente no se encuentra registrado");
+                        }
+                    } else{
+                    JOptionPane.showMessageDialog(null, "El cliente no puede ser mostrado");
+                }
+            }catch(Exception e){
+                System.out.println(e);
+            }
+                    /*
                     GuiadeServicio guia = new GuiadeServicio(Float.parseFloat(vista.txttotal.getText()), vista.txadescripcion.getText(), 
                             new Celular(vista.jComboBoxmarca.getSelectedItem().toString(), vista.txtmodelo.getText(), vista.txtfalladecelular.getText(), vista.jCheckBoxconCHIP.isSelected(), vista.jCheckBoxconMicroSD.isSelected(), vista.jCheckBoxnoprende.isSelected(), vista.jCheckBoxnoprende.isSelected(), vista.jCheckBoxcaidadeagua.isSelected()), 
                             new Cliente(vista.txtnombre.getText(), vista.txtdni.getText(), vista.txtcelular.getText(), vista.txtcorreo.getText()
                             ));//,timeStamp);
-                    guia.toString();
+                    guia.toString();*/
                 }else{
                     JOptionPane.showMessageDialog(vista, "Debe ingresar valores en todos los campos" , "Error" , JOptionPane.WARNING_MESSAGE );
                 }

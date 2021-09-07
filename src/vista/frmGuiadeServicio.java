@@ -142,7 +142,7 @@ public class frmGuiadeServicio extends javax.swing.JFrame {
 
         txttotal.setText(" ");
 
-        btnmostrar.setText("Mostrar");
+        btnmostrar.setText("Completar");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
