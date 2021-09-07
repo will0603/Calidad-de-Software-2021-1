@@ -12,6 +12,7 @@ import controlador.ControladorGuiadeServicio;
 import controlador.ControladorGuiadeVenta;
 import controlador.ControladorInventario;
 import controlador.ControladorLoginInicio;
+import controlador.ControladorRegistrarCliente;
 import general.Sistema;
 import javax.swing.UIManager;
 import vista.frmAñadirProducto;
@@ -22,6 +23,7 @@ import vista.frmGuiadeServicio;
 import vista.frmIniciar;
 import vista.frmGuiaVenta;
 import vista.frmInventario;
+import vista.frmRegistrarCliente;
 
 /**
  *
@@ -167,9 +169,16 @@ public class frmMenu extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu4);
 
-        jMenu2.setText("Repositorio");
+        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ordendetrabajo/addemployee.png"))); // NOI18N
+        jMenu2.setText("Registrar");
 
-        jMenuItem1.setText("Soluciones");
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ordendetrabajo/addemployee.png"))); // NOI18N
+        jMenuItem1.setText("Cliente");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem1);
 
         jMenuBar1.add(jMenu2);
@@ -249,6 +258,13 @@ public class frmMenu extends javax.swing.JFrame {
         ControladorInventario controlador = new ControladorInventario(inventario);
         controlador.iniciar();
     }//GEN-LAST:event_btnInventarioActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+        frmRegistrarCliente vista = new frmRegistrarCliente();
+        ControladorRegistrarCliente control = new ControladorRegistrarCliente(vista);
+        control.iniciar();
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments

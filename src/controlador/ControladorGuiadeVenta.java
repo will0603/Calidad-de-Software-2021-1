@@ -10,6 +10,8 @@ import excepciones.InvalidNombreException;
 import general.Sistema;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.CallableStatement;
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
@@ -70,13 +72,14 @@ public class ControladorGuiadeVenta {
                 
                 }
                 
-                
+                JOptionPane.showMessageDialog(vista, "Venta generada exitosa");
                 vista.dispose();
+                /*
                 frmMenu frmmenu = new frmMenu();
                 frmmenu.setLocationRelativeTo(null);
                 frmmenu.setVisible(true);
                 
-                
+                */
             
             }else{
                     JOptionPane.showMessageDialog(vista, "Debe ingresar valores en todos los campos" , "Error" , JOptionPane.WARNING_MESSAGE );
@@ -278,6 +281,47 @@ public class ControladorGuiadeVenta {
             }
         });
         
+        vista.btnCompletar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+               // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+               if(vista.txtDni.getText().length() != 0){
+                   Conexion con = new Conexion();
+                    String SQL = "{call get_cliente_by_dni(?)}";   
+                
+                
+                    CallableStatement stmt = null;
+                    String[] datos = null;
+                try(Connection conn = con.conectarMySQL() ){
+           
+                    stmt = conn.prepareCall(SQL);
+                    stmt.setString(1,vista.txtDni.getText());
+                
+                    ResultSet rs = stmt.executeQuery();
+                
+                    if(rs.getRow() <= 1){
+                        if(rs.next()){
+                        vista.txtNombre.setText(rs.getString("nombre"));
+                        //vista.txtDni.setText(rs.getString("dni"));
+                        vista.txtCelular.setText(rs.getString("nroCelular"));
+                        vista.txtCorreo.setText(rs.getString("correo"));
+                        }else{
+                        JOptionPane.showMessageDialog(null, "El cliente no se encuentra registrado");
+                        }
+                    } else{
+                    JOptionPane.showMessageDialog(null, "El cliente no puede ser mostrado");
+                }
+            }catch(Exception e){
+                System.out.println(e);
+            }
+                   
+               } else{
+                   JOptionPane.showMessageDialog(vista, "Complete el campo del Dni.");
+               }
+               
+            
+            }
+        });
         
     }
     
